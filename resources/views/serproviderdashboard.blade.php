@@ -12,8 +12,8 @@
                     <div class="well">
                         <div class="row">
                             <div class="col-md-12 col-lg-6">
-                                <h5>No of Clients Served.</h5>
-                                <h4></h4>
+                                <h5> Clients Served.</h5>
+                                <h4> </h4>
                             </div>
                         </div>
                     </div>
@@ -23,8 +23,13 @@
                     <div class="well">
                         <div class="row">
                             <div class="col-md-12 col-lg-6">
-                                <h5>No.  of Services </h5>
-                                <h3>424,892</h3>
+                                <h5> Services offered </h5>
+                                <h3> <p class="joined-text">
+                                
+                                 </p>
+
+                                
+                            </h3>
                             </div>
                         </div>
                     </div>
@@ -32,10 +37,7 @@
             </div>
                         
                                 <div class="card-footer ">
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
-                                    </div>
+                                                                        
                                 </div>
                             </div>
                         </div>

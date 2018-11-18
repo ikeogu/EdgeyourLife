@@ -70,4 +70,22 @@ class User extends Authenticatable
       return $this->hasMany('App\Provider');
     }
     
+    public function providersCount()
+    {
+        return $this->hasOne('App\Provider')
+        ->selectRaw('user_id, count(*) as aggregate')
+        ->groupBy('user_id');
+    }
+
+    public function getProvidersCountAttribute()
+        {
+        // if relation is not loaded already, let's do it first
+        if ( ! array_key_exists('providersCount', $this->relations)) 
+            $this->load('providersCount');
+        
+        $related = $this->getRelation('providersCount');
+        
+        // then return the count directly
+        return ($related) ? (int) $related->aggregate : 0;
+        }
 }

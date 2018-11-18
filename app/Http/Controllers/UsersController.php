@@ -18,6 +18,9 @@ class UsersController extends Controller
 
         return view('users.index', ['users'=>$users]);
 
+        $user = Provider::find(auth()->user()->id);
+        return view('serproviderdashboard')->with('user', $user);
+
 
     }
 
@@ -54,6 +57,8 @@ class UsersController extends Controller
         //
         $user = User::find( auth()->user()->id);
         return view('service_list', ['user'=>$user]);
+
+       
         
        
     }
@@ -91,4 +96,5 @@ class UsersController extends Controller
     {
         //
     }
+    
 }

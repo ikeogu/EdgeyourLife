@@ -1,50 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<script type="text/javascript">
- function geoFindMe() {
-  var output = document.getElementById("result");
 
-  if (!navigator.geolocation){
-    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-    return;
-  }
 
-  function success(position) {
-    var latitude  = position.coords.latitude;
-    var longitude = position.coords.longitude;
-
-    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-
-    var img = new Image();
-    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-
-    output.appendChild(img);
-  }
-
-  function error() {
-    output.innerHTML = "Unable to retrieve your location";
-  }
-
-  output.innerHTML = "<p>Locating…</p>";
-
-  navigator.geolocation.getCurrentPosition(success, error);
-}
-
-</script>
-<section class="generic-banner elements-banner relative" style="padding-top:300px;">
-			<div class="container">
-				<div class="row">
+<section class="generic-banner elements-banner relative" style="padding-top:300px;" onload="initialize()">
+			
+				<div class="row" >
 					<div class="col-lg-6 col-md-6 col-sm-6">
-                        <div id="result" ></div>
-                        <p><button onclick="geoFindMe()">Show my location</button></p>
-						<form action="/search" method="POST" role="search">
+                    <div id="mapholder">
+    
+                     </div>
+                    {{$user = new POI($_GET["latitude"], $_GET["longitude"])}} 
+                        {{ $user->getDistanceInMetersTo($poi)}}
+						<form action="/dashboard" method="POST" role="search">
                                 {{ csrf_field() }}
                                 <div class="input-group ">
                                     <input type="text" class="form-control col-md-6" name="q"
                                         placeholder="Enter Current Location and search Nearby Service"  id="searcher" > <span class="input-group-btn">
                                         <button type="submit" class="btn btn-default">
-                                            <span class="glyphicon glyphicon-search"></span>
+                                        <i class="fas fa-search"></i>
                                         </button>
                                     </span>
                                 </div>

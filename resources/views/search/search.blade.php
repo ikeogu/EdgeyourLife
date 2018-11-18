@@ -15,7 +15,7 @@
                                     <input type="text" class="form-control col-lg-12" name="q"
                                         placeholder="Search for services"  id="searcher" > <span class="input-group-btn">
                                         <button type="submit" class="btn btn-default">
-                                            <span class="glyphicon glyphicon-search"></span>
+                                        <i class="fas fa-search"></i>
                                         </button>
                                     </span>
                                 </div>

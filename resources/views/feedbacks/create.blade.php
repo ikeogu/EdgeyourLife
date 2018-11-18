@@ -52,50 +52,10 @@
                                         @endif
                                 </div>
                                 <div class="input-group-icon mt-10">
-                                    <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
-                                    <div class="form-select">
-                                       <select style="display: none;" >
-                                           <option value="1">City</option>
-                                           <option value="1">Dhaka</option>
-                                           <option value="1">Dilli</option>
-                                           <option value="1">Newyork</option>
-                                           <option value="1">Islamabad</option>
-                                       </select>
-                                       <div class="nice-select" tabindex="0">
-                                            <span class="current">City</span>
-                                            <ul class="list">
-                                                    <li data-value="1" class="option selected focus">City</li>
-                                                    <li data-value="1" class="option">Dhaka</li>
-                                                    <li data-value="1" class="option">Dilli</li>
-                                                    <li data-value="1" class="option">Newyork</li>
-                                                    <li data-value="1" class="option">Islamabad</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                {{ Form::select('provider_id', $services, null, ['class' => 'form-control']) }}
                                 </div> 
 
-                                 <div class="input-group-icon mt-10">
-                                    <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
-                                    <div class="form-select">
-                                       <select style="display: none;" name="satisfactory">
-                                           <option value="1">City</option>
-                                           <option value="1">Dhaka</option>
-                                           <option value="1">Dilli</option>
-                                           <option value="1">Newyork</option>
-                                           <option value="1">Islamabad</option>
-                                       </select>
-                                       <div class="nice-select" tabindex="0">
-                                            <span class="current">City</span>
-                                            <ul class="list">
-                                                    <li data-value="1" class="option selected focus">City</li>
-                                                    <li data-value="1" class="option">Dhaka</li>
-                                                    <li data-value="1" class="option">Dilli</li>
-                                                    <li data-value="1" class="option">Newyork</li>
-                                                    <li data-value="1" class="option">Islamabad</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>             
+                                       
                                 <div class="mt-10">
                                    <textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required="" name="feed_back"></textarea>
                                    @if ($errors->has('feed_back'))

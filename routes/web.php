@@ -34,10 +34,10 @@ Route::post('/search',function(){
 });
 
 
-Route::post('/home',function(){
+Route::post('/dashboard',function(){
     $q = Input::get ( 'q' );
    if ($q!=""){
-       $providers = Provider::where('address','like','%'. $q .'%' )->orWhere('city','like','%'. $q .'%' )->orWhere('state','like','%'. $q .'%' )->orWhere('id','like','%'. $q .'%')->get();
+       $providers = Provider::where('address','like','%'. $q .'%' )->orWhere('city','like','%'. $q .'%' )->orWhere('state','like','%'. $q .'%' )->orWhere('id','like','%'. $q .'%')->orWhere('name','like','%'. $q .'%')->get();
        return view('userdashboard')->withDetails($providers)->withQuery($q);
    }else{
    return view('userdashboard')->withMessage("Services in current  Location not found.");

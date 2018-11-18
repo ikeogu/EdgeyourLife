@@ -271,11 +271,7 @@
                                 <p class=""> You are logged in!</p>
                             </a>
                                 
-                            </li>
-                            
-                        </ul>
-
-                        <ul class="nav navbar-nav navbar-right">
+                            </li><ul class="nav navbar-nav navbar-right">
                             <li>
                             <a href="#">
                                 <p> {{ Auth::user()->name }}</p>
@@ -295,6 +291,10 @@
                             </li>
                             <li class="separator hidden-lg"></li>
                         </ul>
+                            
+                        </ul>
+
+                        
                     </div>
                 </div>
             </nav>

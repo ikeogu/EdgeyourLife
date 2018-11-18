@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Provider;
 use App\Feedback;
 use Illuminate\Http\Request;
 
@@ -23,8 +23,10 @@ class feedBackController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+
     {
-        return view('feedbacks.create');
+        $services = Provider::get()->pluck('name', 'id')->toArray();
+        return view('feedbacks.create',compact('services'));
     }
 
     /**

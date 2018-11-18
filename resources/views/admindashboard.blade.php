@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-md-12 col-lg-6">
                                 <h5>Total Users</h5>
-                                <h4></h4>
+                                <h4>{{ App\User::count() }}</h4>
                             </div>
                         </div>
                     </div>
@@ -23,8 +23,8 @@
                     <div class="well">
                         <div class="row">
                             <div class="col-md-12 col-lg-6">
-                                <h5>No.  of Services </h5>
-                                <h3>424,892</h3>
+                                <h5>No.of Services </h5>
+                                <h3>{{ App\Provider::count() }}</h3>
                             </div>
                         </div>
                     </div>
