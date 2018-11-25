@@ -20,19 +20,7 @@
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/vendor/jquery-2.2.4.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		
-		<script src="js/jquery.ajaxchimp.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/jquery.nice-select.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<script src="js/jquery.counterup.min.js"></script>
-		<script src="js/waypoints.min.js"></script>
-		<script src="js/main.js"></script>
+   
        
     <!------ Include the above in your HEAD tag ---------->
 
@@ -51,15 +39,24 @@
 
     <!-- Styles -->
   
-    <link rel="stylesheet" href="{{ asset('css/linearicons.css')}}">
+        <link rel="stylesheet" href="{{ asset('css/linearicons.css')}}">
 		<link rel="stylesheet" href="{{ asset('css/owl.carousel.css')}}">
-		<link rel="stylesheet" href="{{ asset('fontawesome/css/font-awesome.min.css')}}">
+		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
 		<link rel="stylesheet" href="{{ asset('css/nice-select.css')}}">
 		<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}">
 		<link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
-        <link rel="stylesheet" href="{{ asset('css/main.css')}}">
-	
+		<link rel="stylesheet" href="{{ asset('css/main.css')}}">
    <!-- Animation library for notifications   -->
+        <script src="{{ asset('js/vendor/jquery-2.2.4.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.ajaxchimp.min.js') }}"></script>
+		<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
+		<script src="{{ asset('js/waypoints.min.js') }}"></script>
+		<script src="{{ asset('js/main.js') }}"></script>
 
 
 </head>
