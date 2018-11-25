@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Provider;
-use App\Feedback;
+
 use Illuminate\Http\Request;
 
-class FeedBackController extends Controller
+class AboutusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,8 @@ class FeedBackController extends Controller
      */
     public function index()
     {
-        return view('feedbacks.index', ['feedbacks'=>$feedbacks]);
+        //
+        return view('aboutus');
     }
 
     /**
@@ -23,10 +23,8 @@ class FeedBackController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-
     {
-        $services = Provider::get()->pluck('name', 'id')->toArray();
-        return view('feedbacks.create',compact('services'));
+        //
     }
 
     /**
@@ -37,27 +35,16 @@ class FeedBackController extends Controller
      */
     public function store(Request $request)
     {
-        $feedback = $this->validate(request(), [
-            'name' => 'required',
-            'comment' => 'required',
-            'name_of_service' => 'required',
-            'satisfactory' => 'required',
-            'feed_back' => 'required',
-            'email' => 'required',
-        ]);
-          
-        feedBack::create($feedback);
-  
-        return back()->with('success', 'Thanks for your Reply');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Feedback  $feedback
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Feedback $feedback)
+    public function show($id)
     {
         //
     }
@@ -65,10 +52,10 @@ class FeedBackController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Feedback  $feedback
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Feedback $feedback)
+    public function edit($id)
     {
         //
     }
@@ -77,10 +64,10 @@ class FeedBackController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Feedback  $feedback
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Feedback $feedback)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -88,10 +75,10 @@ class FeedBackController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Feedback  $feedback
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Feedback $feedback)
+    public function destroy($id)
     {
         //
     }

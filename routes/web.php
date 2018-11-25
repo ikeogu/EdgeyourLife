@@ -12,6 +12,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/aboutus', 'AboutusController@index')->name('aboutus');
 Route::get('/service_list', 'DashboardController@listServices')->name('listservices');
 
 Route::resource('users','UsersController');

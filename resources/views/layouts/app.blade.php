@@ -29,6 +29,7 @@
 		<script src="js/jquery.counterup.min.js"></script>
 		<script src="js/waypoints.min.js"></script>
 		<script src="js/main.js"></script>
+       
     <!------ Include the above in your HEAD tag ---------->
 
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -45,12 +46,13 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
     <!-- Styles -->
   
     <link rel="stylesheet" href="{{ asset('css/linearicons.css')}}">
 		<link rel="stylesheet" href="{{ asset('css/owl.carousel.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
+		<link rel="stylesheet" href="{{ asset('fontawesome/css/font-awesome.min.css')}}">
 		<link rel="stylesheet" href="{{ asset('css/nice-select.css')}}">
 		<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}">
 		<link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
@@ -58,8 +60,6 @@
 		<link rel="stylesheet" href="{{ asset('css/.css')}}">
    <!-- Animation library for notifications   -->
 
-
-	
 
 </head>
 <body>
@@ -76,10 +76,10 @@
                             </div>
                             <div class="main-menubar d-flex align-items-center">
                                 <nav class="hide">
-                                    <a href="/">Home</a>
-                                    <a href="/aboutus">About us</a>                        
-                                    <a  href="{{ route('login') }}">{{ __('Login') }}</a>
-                                    <a  href="{{ route('register') }}" style="color:black;">{{ __('Signup') }}</a>
+                                <a href="/"><span class="lnr lnr-home" style="font-size:40px; "></span></a>
+                              <a href="{{route ('aboutus')}}">  <span class="lnr lnr-license" style="font-size:40px; ">  </span> </a>                       
+                                     <a  href="{{ route('login') }}"><span class="lnr lnr-arrow-right" style="font-size:40px; "></span></a>
+                                   <a  href="{{ route('register') }}" > <span class="lnr lnr-users" style="font-size:40px;"> </span></a>
                                                                        
                                 </nav>
                                 <div class="menu-bar"><span class="lnr lnr-menu"></span></div>

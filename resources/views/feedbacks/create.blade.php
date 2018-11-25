@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <section style="padding-top:100px;">
         <div class="container-fluid">
             <div class="row">
@@ -43,19 +44,13 @@
                                             </span>
                                         @endif
                                 </div>
-                                <div class="mt-10">
-                                    <input type="text" name="name_of_service" placeholder=" What kind of service was offered to you? " onfocus="this.placeholder = ''" onblur="this.placeholder = 'What kind of service was offered to you?'" required="" class="single-input">
-                                    @if ($errors->has('name_of_service'))
-                                            <span class="invalid-feedback" role="alert">
-                                               <strong>{{ $errors->first('name_of_service') }}</strong>
-                                            </span>
-                                        @endif
-                                </div>
+                               
                                 <div class="input-group-icon mt-10">
-                                {{ Form::select('provider_id', $services, null, ['class' => 'form-control']) }}
+                                <p> Choose the name of Service provider</p>
+                                {{ Form::select('provider_id', $services, ['class' => 'form-control']) }}
                                 </div> 
 
-                                       
+                                
                                 <div class="mt-10">
                                    <textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required="" name="feed_back"></textarea>
                                    @if ($errors->has('feed_back'))
