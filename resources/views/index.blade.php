@@ -1,11 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
-
-
 <section style="padding:190px; ">
-  <main role="main" class="inner cover center">
+  
 	<center><h1 class="cover-heading" style="color:#6cbb23">EYL.</h1></center>
 	<form action="/search" method="POST" role="search">
     	 {{ csrf_field() }}
@@ -59,7 +56,7 @@
 				</div>
 			</div>
 		</div>
-  </main>
+  
   
 </section>
   
