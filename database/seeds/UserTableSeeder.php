@@ -18,10 +18,10 @@ class UserTableSeeder extends Seeder
 
        $admin = new User();
        $admin->name = 'Ikeogu Emmanuel ';
-       $admin->email = 'ikeogu31@gmail.com';
+       $admin->email = 'ikeogu322@gmail.com';
        $admin->phone = '08133627611';
-       $admin->city ='Port Harcourt';
-       $admin->state = 'Rivers State';
+       
+      
        $admin->address = ' Back of Gensis Choba';
        $admin->password = bcrypt('password');
        $admin->save();
@@ -31,8 +31,7 @@ class UserTableSeeder extends Seeder
        $provider->name = 'Daniel IKeogu ';
        $provider->email = 'iDanny@gmail.com';
        $provider->phone = '08133627345';
-       $provider->city ='Kafanchan';
-       $provider->state = 'Kadunatate';
+      
        $provider->address = ' ngwamwgizor';
        $provider->password = bcrypt('password');
        $provider->save();
@@ -42,9 +41,8 @@ class UserTableSeeder extends Seeder
        $guest->name = 'Ola baby';
        $guest->email = 'oly@gmail.com';
        $guest->phone = '08133627219';
-       $guest->city ='Area 1';
-       $guest->state = 'Abujas State';
-       $guest->address = ' No 12 34street';
+       $guest->city ='3';
+      
        $guest->password = bcrypt('password');
        $guest->save();
        $guest->roles()->attach($role_user);
