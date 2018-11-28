@@ -19,10 +19,13 @@ class CreateServiceUserTable extends Migration
             $table->integer('providers_id')->unsigned();
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('service_user_id')->references('id')->on('users');
             
             $table->foreign('providers_id')->references('id')->on('providers');
             $table->timestamps();
         });
+
+        DB::statment(' ALTER table "service_user" ADD CONSTRAINT "service_user_user_id_foreign" foreign key ("user_id") references "users" ("id")');
     }
 
     /**
