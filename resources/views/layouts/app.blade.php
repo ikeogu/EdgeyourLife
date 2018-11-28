@@ -74,10 +74,10 @@
                             </div>
                             <div class="main-menubar d-flex align-items-center">
                                 <nav class="hide">
-                                <a href="/"><span class="lnr lnr-home" style="font-size:40px; "></span></a>
-                              <a href="{{route ('aboutus')}}">  <span class="lnr lnr-license" style="font-size:40px; ">  </span> </a>                       
-                                     <a  href="{{ route('login') }}"><span class="lnr lnr-arrow-right" style="font-size:40px; "></span></a>
-                                   <a  href="{{ route('register') }}" > <span class="lnr lnr-users" style="font-size:40px;"> </span></a>
+                                <a href="/"><span class="lnr lnr-home" style="font-size:40px; "> Home</span></a>
+                              <a href="{{route ('aboutus')}}">  <span class="lnr lnr-license" style="font-size:20px; "> Aboutus  </span> </a>                       
+                                     <a  href="{{ route('login') }}"><span class="lnr lnr-arrow-right" style="font-size:20px; "> Login</span></a>
+                                   <a  href="{{ route('register') }}" > <span class="lnr lnr-users" style="font-size:20px;"> Signup</span></a>
                                                                        
                                 </nav>
                                 <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
