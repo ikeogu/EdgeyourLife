@@ -1,31 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="oz-body-wrap">
-            <!-- Start Header Area -->
-            <header class="default-header">
-                <div class="container-fluid">
-                    <div class="header-wrap">
-                        <div class="header-top d-flex justify-content-between align-items-center">
-                            <div class="logo">
-                                <a href="index.html"><h3><img src="{{URL::asset('/img/last.jpg')}}" alt="" height="50" width="50">
-                                    EYL</h3>
-                                    </a>
-                            </div>
-                            <div class="main-menubar d-flex align-items-center">
-                                <nav class="hide">
-                                <a href="/"><span class="lnr lnr-home" style="font-size:40px; "> Home</span></a>
-                              <a href="{{route ('aboutus')}}">  <span class="lnr lnr-license" style="font-size:20px; "> Aboutus  </span> </a>                       
-                                     <a  href="{{ route('login') }}"><span class="lnr lnr-arrow-right" style="font-size:20px; "> Login</span></a>
-                                   <a  href="{{ route('register') }}" > <span class="lnr lnr-users" style="font-size:20px;"> Signup</span></a>
-                                                                       
-                                </nav>
-                                <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
                    
 
 <section style="padding:190px; ">
