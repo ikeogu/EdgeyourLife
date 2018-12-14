@@ -9,7 +9,7 @@
 	<form action="/search" method="POST" role="search">
     	 {{ csrf_field() }}
         <div class="input-group ">
-            <div class="input-group  form-3 pl-0 col-md-6 col-sm-6 col-lg-10">
+            <div class="input-group  pl-0 col-md-10 col-sm-10 col-lg-10">
 				   <input class="form-control my-0 py-1  lime-border" type="text" placeholder=" Search for services" aria-label="Search" name="q">
 					<div class="input-group-append">
 						<span class="input-group-text lime lighten-2" id="basic-text1">
