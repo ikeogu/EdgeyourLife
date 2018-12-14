@@ -1,10 +1,12 @@
 <?php
 
 $url = parse_url(getenv("DATABASE_URL"));
-$host = $url["host"]?? null;
+
+$host = $url["host"] ?? null;
 $username = $url["user"] ?? null;
-$password = $url["pass"]?? null;
-$database = substr($url["path"], 1)?? null;
+$password = $url["pass"] ?? null;
+$database = substr($url["path"], 1) ?? null;
+
 
 return [
 
@@ -19,7 +21,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql_production'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -72,28 +74,14 @@ return [
         ],
 
         'pgsql' => [
-            'driver' => 'pgsql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'prefer',
-        ],
-
-        'pgsql_production' => [
-            'driver' => 'pgsql',
-            'host' => $host,
+            'driver'   => 'pgsql',
+            'host'     => $host,
             'database' => $database,
             'username' => $username,
             'password' => $password,
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'prefer',
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
         ],
 
         'sqlsrv' => [

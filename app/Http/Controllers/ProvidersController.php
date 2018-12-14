@@ -105,10 +105,13 @@ class ProvidersController extends Controller
         $provider->user_id = auth()->user()->id;
         $provider->certification = $request->Input('certification');
         $provider->special_tool = $request->Input('special_tool');
+        $user = User::find($provider->user_id);
+            
+        $user->providers()->save($provider);
         
-        $provider->save();
+       
   
-        return back()->with('success', 'Your Service is now Registered');
+        return back()->with('success', 'Your Service has been Registered');
     }
 
     /**

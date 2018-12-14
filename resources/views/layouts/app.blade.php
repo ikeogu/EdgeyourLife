@@ -39,13 +39,13 @@
 
     <!-- Styles -->
   
-        <link rel="stylesheet" href="{{ asset('css/linearicons.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/owl.carousel.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/nice-select.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/main.css')}}">
+        <link rel="stylesheet" href="css/linearicons.css">
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/nice-select.css">
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/main.css">
    <!-- Animation library for notifications   -->
         <script src="js/vendor/jquery-2.2.4.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
@@ -74,7 +74,7 @@
                             </div>
                             <div class="main-menubar d-flex align-items-center">
                                 <nav class="hide">
-                                <a href="/"><span class="lnr lnr-home" style="font-size:40px; "> Home</span></a>
+                                <a href="/"><span class="lnr lnr-home" style="font-size:20px; "> Home</span></a>
                               <a href="{{route ('aboutus')}}">  <span class="lnr lnr-license" style="font-size:20px; "> Aboutus  </span> </a>                       
                                      <a  href="{{ route('login') }}"><span class="lnr lnr-arrow-right" style="font-size:20px; "> Login</span></a>
                                    <a  href="{{ route('register') }}" > <span class="lnr lnr-users" style="font-size:20px;"> Signup</span></a>

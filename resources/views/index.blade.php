@@ -1,66 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
+@extends('layouts.app')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Eyl') }}</title>
-
-    <!-- Scripts -->
-     <!--   Core JS Files   -->
-    
-
-
-<!-- Latest compiled and minified JavaScript -->
-    <!-- Styles -->
-
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-   
-       
-    <!------ Include the above in your HEAD tag ---------->
-
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-            crossorigin="anonymous">
-            
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-   
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-
-    <!-- Styles -->
-  
-        <link rel="stylesheet" href="{{ asset('css/linearicons.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/owl.carousel.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/nice-select.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/main.css')}}">
-   <!-- Animation library for notifications   -->
-        <script src="js/vendor/jquery-2.2.4.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.ajaxchimp.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/jquery.nice-select.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<script src="js/jquery.counterup.min.js"></script>
-		<script src="js/waypoints.min.js"></script>
-		<script src="js/main.js"></script>
-
-
-</head>
-<body>
+@section('content')
     <div class="oz-body-wrap">
             <!-- Start Header Area -->
             <header class="default-header">
@@ -114,9 +54,9 @@
 						<div class="white-bg">
 							<div class="container">
 								<div class="section-top-border">
-									<div class="row">
+									
 										@foreach($details as $provider)
-												
+										<div class="row">	
 											<div class="col-md-3">
 												<img src="/storage/logo/{{$provider->logo}}" width="100" height="100" class="img-fluid" > 
 											</div>
@@ -125,9 +65,9 @@
 												<p> {{ $provider->service}}</p>
 												<a href="/providers/{{ $provider->id }}">more </a>
 											</div>        
-													
+										</div>			
 										@endforeach
-									</div>
+									
 								</div>
 							</div>
 						</div> 
@@ -145,8 +85,7 @@
 		</div>
   </main>
   
-</body>
-</html>
+@endsection
 
     
   
