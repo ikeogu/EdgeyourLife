@@ -25,8 +25,10 @@
                             </div><br />
                             @endif
                         </div>
-                        <div class="col-lg-8 col-md-8">
-                            <h3 class="mb-30">Please Provide us with your details</h3>
+                        <div class="col-lg-8 col-md-8" style="padding-top:40px;">
+                            <div class="card-header">
+                                 <h3 class="mb-30">Please Tell us More about your service</h3>
+                            </div>
                             <form  method="POST" action="{{ route('providers.store') }}" enctype="multipart/form-data">
                             @csrf
                                 <div class="mt-10">
@@ -46,7 +48,7 @@
                                         @endif
                                 </div>
                                 <div class="mt-10">
-                                    <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" placeholder="Phone" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" required autofocus>
+                                    <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ Auth::user()->phone }}" placeholder="Phone" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" required autofocus>
                                         @if ($errors->has('phone'))
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $errors->first('phone') }}</strong>
@@ -54,7 +56,7 @@
                                         @endif
                                 </div>
                                 <div class="mt-10">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required  placeholder="Email Address" onfocus="this.placeholder = 'Email Address'" onblur="this.placeholder = 'Phone'">
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ Auth::user()->email }}" required  placeholder="Email Address" onfocus="this.placeholder = 'Email Address'" onblur="this.placeholder = 'Phone'">
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -145,8 +147,10 @@
                                                             @endif
 
                                 </div>
-                                <div class="form-group row mb-0">
-                                <button class="genric-btn primary circle pull-right" type="submit"> {{ __('Register') }}</button>
+                                <div class="form-group row mb-0" style="padding-top:30px;">
+                                    <center>
+                                <button class="genric-btn primary circle " type="submit"> {{ __('Register') }}</button>
+                                </center>
                                 </div>							
                                                             
                             </form>

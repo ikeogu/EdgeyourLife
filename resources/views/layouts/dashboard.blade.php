@@ -20,25 +20,22 @@
 <!--  Light Bootstrap Table core CSS    -->
 <link href="{{asset ('css/light-bootstrap-dashboard.css')}}" rel="stylesheet"/>
 
-    <link href="{{asset ('css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
-    <link href="{{asset ('css/demo.css')}}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('css/linearicons.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/owl.carousel.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/nice-select.css')}}">
-		<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}">
-       
-<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="js/fusioncharts.js"></script>
-<script type="text/javascript" src="js/fusioncharts.theme.zune.js"></script>
-<script type="text/javascript" src="js/fusioncharts.jqueryplugin.js"></script>
+    <link href="{{asset('css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
+   
+    <link rel="stylesheet" href="{{asset('css/linearicons.css')}}">
+		
+		<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+		<link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
+		 
+<script type="text/javascript" src="{{asset('js/jquery-1.12.4.min.js')}}"></script>
+
 <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-theme.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datetimepicker.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/main2.css')}}">
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/moment-with-locales.js"></script>
-<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+
+<link rel="stylesheet" type="text/css" href="{{asset('css/main2.css')}}">
+<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/moment-with-locales.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>
 		
         <link rel="stylesheet" href="{{ asset('css/main.css')}}">
         <script src="js/jquery.ajaxchimp.min.js"></script>
@@ -81,7 +78,7 @@
 
                 <ul class="nav">
                     <li class="">
-                        <a href="dashboard.html">
+                        <a href="#">
                             <i class="pe-7s-graph"></i>
                             <p>Dashboard</p>
                         </a>
@@ -106,9 +103,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('feedback')}}">
                                 <i class="pe-7s-note2"></i>
-                                <p>Add Advert</p>
+                                <p>Customer Feedbacks</p>
                             </a>
                         </li>
                        
@@ -174,12 +171,12 @@
                 </div>
             </nav>
 
-            <main class="py-4">
+            <main class="py-4" style="padding-top:20px;">
                 @yield('others')
-                </main> 
+            </main> 
                 <footer>   
                     
-                </div>
+                
             </footer>
             
   
@@ -204,13 +201,13 @@
 
                 <ul class="nav">
                     <li class="">
-                        <a href="dashboard.html">
+                        <a href="{{route('dashboard')}}">
                             <i class="pe-7s-graph"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('home')}}">
+                        <a href="{{route('profile')}}">
                             <i class="pe-7s-user"></i>
                             <p>User Profile</p>
                         </a>
@@ -231,7 +228,13 @@
                     <li>
                         <a href="{{route('listservices')}}">
                             <i class=""></i>
-                            <p>Update Service</p>
+                            <p>Update Service</p> 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('myfeedback')}}">
+                            <i class=""></i>
+                            <p>Customer's Feedback on your Service</p>
                         </a>
                     </li>
                     
@@ -251,15 +254,15 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Dashboard</a>
+                       
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-left">
                             <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                               
                                     <i class="fa fa-dashboard"></i>
                                     <p class="hidden-lg hidden-md">Dashboard</p>
-                                </a>
+                               
                             </li>
                             <li>
                                 <a href="#" >                                                                   
@@ -299,14 +302,14 @@
                 </div>
             </nav>
 
-            <main class="py-4">
+            <main class="py-4" style="padding-top:20px;">
                 @yield('others')
             </main>
   
             <footer class="footer">
                 
                   
-                </div>
+               
             </footer>
            
     @else 

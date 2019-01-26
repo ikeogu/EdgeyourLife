@@ -3,15 +3,15 @@
 @section('content')
 
           
- <section class="feature-area pt-100 pb-100  relative" style="padding-top: 60px;">
+ <section class="feature-area pt-100 pb-100  relative" style="padding-top: 40px;">
           
 
 
           <div class="section-top-border">
                 <h3 class="mb-30">Details</h3>
-                <div class="row placeholders">
-                  <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="/storage/logo/{{$provider->logo}}" width="250" height="250" class="img-responsive" >
+                <div class="row  align-items-center justify-content-center">
+                  <div class="col-xs-6 col-sm-3 placeholder " >
+                    <img src="/storage/logo/{{$provider->logo}}" width="150" height="150" class="img-responsive rounded" style="margin-left:50px;">
                   </div>
                 </div>
 		            <div class="progress-table-wrap">

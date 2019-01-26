@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Provider;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -18,10 +19,14 @@ class UsersController extends Controller
 
         return view('users.index', ['users'=>$users]);
 
-        $user = Provider::find(auth()->user()->id);
-        return view('serproviderdashboard')->with('user', $user);
+       
 
 
+    }
+    public function userservice(){
+       
+        return view('users.show');
+        
     }
 
     /**

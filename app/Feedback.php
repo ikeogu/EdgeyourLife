@@ -17,7 +17,7 @@ class Feedback extends Model
         'name', 
         'email', 
         'name_of_service', 
-        'comment', 
+        'user_id', 
         'satisfactory', 
         'feed_back', 
        
@@ -33,4 +33,7 @@ class Feedback extends Model
     public function provider(){
         return $this->belongsTo('App\Provider');      
     }
+   
+   
+   
 }

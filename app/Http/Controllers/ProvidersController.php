@@ -23,7 +23,7 @@ class ProvidersController extends Controller
 
         return view('providers.index', ['providers'=>$providers]);
 
-        if(Auth::ceck())
+        if(Auth::check())
         $providers = Provider::where('user_id', Auth::user()->id)->get();
         return view('providers.index', ['providers'=>$providers]);
         return view('auth.login');
@@ -109,7 +109,6 @@ class ProvidersController extends Controller
             
         $user->providers()->save($provider);
         
-       
   
         return back()->with('success', 'Your Service has been Registered');
     }

@@ -3,11 +3,12 @@
 @section('content')
 
 <section style="padding-top:100px;">
+    @if(Auth::user())
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="header">
+                        <div class=" card-header">
                               <h4 class="title">{{ __('Kindly give us a feedback. ') }}</h4>
                         </div>
                         <div class="content">
@@ -26,17 +27,18 @@
                             </div><br />
                             @endif
                         </div>
+                        
                         <div class="col-lg-8 col-md-8">
-                            <h3 class="mb-30">FeedBack on Service provided</h3>
+                            <h3 class="mb-30">FeedBack on Service provided to You</h3>
                             <form method="POST" action="{{ route('feedbacks.store') }}" enctype="multipart/form-data">
                             @csrf
                                 <div class="mt-10">
-                                    <input type="text" name="name" placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required="" class="single-input" value="{{ old('name') }}">
+                                    <input type="text" name="name" placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required="" class="single-input" value="{{ Auth::user()->name }}">
                                    
                                    
                                 </div>
                                 <div class="mt-10">
-                                    <input type="text" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required="" class="single-input" value="{{ old('email') }}">
+                                    <input type="text" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required="" class="single-input" value="{{ Auth::user()->email}}">
 
                                      @if ($errors->has('email'))
                                             <span class="invalid-feedback" role="alert">
@@ -60,6 +62,10 @@
                                         @endif
                                    
                                 </div>
+                                <div>
+                                {!! str_repeat('<i class="fa fa-star" aria-hidden="true"></i>', $review->rate) !!}
+                                {!! str_repeat('<i class="fa fa-star-o" aria-hidden="true"></i>', 5 - $review->rate) !!}
+                                </div>
                                 <div class="form-group row mb-0" style="padding-top:30px;">
                                 <button class="genric-btn primary circle pull-right" type="submit"> {{ __('Send') }}</button>
                                 </div>
@@ -69,4 +75,14 @@
                 </div>
             </div>
         </div>
+    @else
+    <div  style="padding-top:200px; padding-bottom:200px;">
+        <center>
+            <h3>Sorry! you must login first</h3> 
+            <a href="{{route('login')}}">Login Here</a>
+        </center>
+     </div>
+
+     @endif
+</section>    
     @endsection                            

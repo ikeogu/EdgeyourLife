@@ -1,7 +1,8 @@
 @extends('layouts.dashboard')
 
 @section('others')
-    <section class="feature-area pt-100 pb-100  relative" >
+
+ <section class="feature-area pt-100 pb-100  relative" >
         <div class="section-top-border">
             <h3 class="mb-30 card-header">Feedbacks from users</h3>
                 <div class="row placeholders">
@@ -19,7 +20,7 @@
 		                    <div class="table-row">
                             
                            
-                                @foreach($feedbacks  as $feedback ) 
+                                @foreach($feedback  as $feedback ) 
                               
                                     <div class="serial">{{ $feedback->id}}</div>
                                         <div class="visit"> {{ $feedback->name }}</div>
@@ -37,6 +38,4 @@
                     </div>
                 </div>
         </div>
-
-    </section>
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Provider;
+use App\User;
 use App\Feedback;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,7 @@ class FeedBackController extends Controller
      */
     public function index()
     {
+        $feedbacks = Feedback::all();
         return view('feedbacks.index', ['feedbacks'=>$feedbacks]);
     }
 
@@ -39,14 +41,26 @@ class FeedBackController extends Controller
     {
         $feedback = $this->validate(request(), [
             'name' => 'required',
-            'comment' => 'required',
+            
             'name_of_service' => 'required',
             'satisfactory' => 'required',
             'feed_back' => 'required',
             'email' => 'required',
         ]);
           
-        feedBack::create($feedback);
+        
+        $feedback = new Feedback();
+        $feedback->name = $request->Input('name');
+        $feedback->email = $request->Input('email');
+        $feedback->user_id = auth()->user()->id;
+        $feedback->name_of_service = $request->Input('name_of_service');
+        $feedback->feed_back = $request->Input('feed_back');
+        $feedback->satisfactory = $request->Input('satisfactory');
+
+        
+        $provider = Provider::find($feedback->provider_id);
+            
+        $feedback->provider()->save($feedback);
   
         return back()->with('success', 'Thanks for your Reply');
     }
@@ -59,9 +73,15 @@ class FeedBackController extends Controller
      */
     public function show(Feedback $feedback)
     {
-        //
+       
     }
 
+    public function myfeedback(){
+
+        $feedback = Feedback::where('user_id', Auth::id())->with('service')->get();
+       
+        return view('feedbacks/myfeedback')->with('feedback', $feedback);
+    }
     /**
      * Show the form for editing the specified resource.
      *

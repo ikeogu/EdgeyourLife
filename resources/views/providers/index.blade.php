@@ -2,8 +2,8 @@
 
 @section('content')
 
-<section class="feature-area pt-100 pb-100  relative" style="padding-top: 200px;">
-  <h4>Services</h4>
+<section class="feature-area pt-100 pb-100  relative" >
+  <h4>{{App\Provider::count()}} Registered Services</h4>
   <div class="white-bg">
 		    <div class="container">
 		      <div class="section-top-border">
