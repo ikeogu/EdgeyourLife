@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Provider;
 use App\User;
+use App\Post;
 use App\Feedback;
 use Illuminate\Http\Request;
 
@@ -75,7 +76,14 @@ class FeedBackController extends Controller
     {
        
     }
+    public function rating(){
+        $provider = Provider::first();
+        $post = Post::first();
 
+        $rating = $post->rating([
+            'rating' => 5
+        ], $provider);
+    }
     public function myfeedback(){
 
         $feedback = Feedback::where('user_id', Auth::id())->with('service')->get();
