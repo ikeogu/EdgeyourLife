@@ -76,13 +76,15 @@ class FeedBackController extends Controller
     {
        
     }
-    public function rating(){
+    public function ratings(){
         $provider = Provider::first();
         $post = Post::first();
 
         $rating = $post->rating([
             'rating' => 5
         ], $provider);
+
+        return view('feedbacks/create');
     }
     public function myfeedback(){
 
