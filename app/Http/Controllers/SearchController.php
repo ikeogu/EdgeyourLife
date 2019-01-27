@@ -116,8 +116,9 @@ class SearchController extends Controller
            }
            return Response($query);
          }
-         else {
-             return ' Service Not Found';
+        else {
+            $query="Service Not Found";
+             return Response($query);
          }
       
    }
