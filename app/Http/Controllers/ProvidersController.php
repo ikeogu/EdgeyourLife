@@ -23,10 +23,7 @@ class ProvidersController extends Controller
 
         return view('providers.index', ['providers'=>$providers]);
 
-        if(Auth::check())
-        $providers = Provider::where('user_id', Auth::user()->id)->get();
-        return view('providers.index', ['providers'=>$providers]);
-        return view('auth.login');
+        
     }
 
     public function adduser(Request $request){

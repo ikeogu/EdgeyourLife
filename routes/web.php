@@ -3,6 +3,8 @@
 use App\Provider;
 use Illuminate\Support\Facades\Input;
 
+
+Route::group(['middleware' => ['web']], function(){
 Route::get('/', function () {
     return view('search.search');
 });
@@ -42,6 +44,6 @@ Route::post('/dashboard',function(){
    }
 });
 
-
+});
 
 
