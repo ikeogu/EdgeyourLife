@@ -115,14 +115,14 @@ class SearchController extends Controller
            </div>";
            }
            return Response($query);
-         }
-        else {
-            $query="Service Not Found";
-             return Response($query);
-         }
+        }
+       
       
    }
- 
+   else {
+    $query="Service Not Found";
+     return Response($query);
+ }
   // Returns an array of articles that have the query string located somewhere within 
   // our articles titles. Paginates them so we can break up lots of search results.
   
