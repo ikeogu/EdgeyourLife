@@ -30,10 +30,11 @@
                     
 				    </div>
 			    </div>
-                <section>
-                    <h5>Search results are:<h5>
-                    <div id="show">
+                <section class="row">
+                   <div class="col-lg-6 col-md-6 col-sm-4">
+                    <div id="show" class="col-lg-6 col-md-6 col-sm-4">
                     </div>
+                   </div> 
                 </section>
 
 </section>

@@ -96,21 +96,23 @@ class SearchController extends Controller
            foreach ($providers as $key => $provider){
                $query.="<div class='row'>
                                                     
-               <div class='col-md-4 mt-sm-10'>
-                <a href='/providers/$provider->id' onclick='trackClick(this)'>
+               <div class='col-md-4 mt-sm-10' style='padding-top:30px;'>
+                
                     <div class=''>
                         <div class='row'>
                             <div class='col-lg-4 col-sm-2 col-md-2'>
-                                <img src='/storage/logo/$provider->logo' width='50' height='50' class='img-fluid rounded'> 
+                                <img src='/storage/logo/$provider->logo' width='50' height='50' class='img-fluid img-responsive'> 
                             </div>
                             <div class='col-lg-8 col-sm-10 col-md-10'>
-                                <h5 style='color:#0000ff;>  $provider->name</h5>   
+                                <h5 style='color:black;>  $provider->name</h5>   
                             
-                                <h5 style='color:#0000ff;> $provider->service </h5>
+                                <h5 style='color:black;> $provider->service </h5>
+                                <a href='/providers/$provider->id' onclick='trackClick(this)'>view more</a> 
                             </div>
                         </div>
+                        <hr>
                     </div> 
-                </a>   
+                  
                </div>        
            </div>";
            }

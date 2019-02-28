@@ -89,7 +89,7 @@
                                 <div class="input-group-icon mt-10">
                                 
                                     <div>
-                                        <input id="state" type="text" class="form-control{{ $errors->has('state') ? ' is-invalid' : '' }}" name="state" value="{{ old('state') }}" required autofocus placeholder="State" onfocus="this.placeholder = ''" onblur="this.placeholder = 'State'>
+                                        <input id="state" type="text" class="form-control{{ $errors->has('state') ? ' is-invalid' : '' }}" name="state" value="{{ old('state') }}" required autofocus placeholder="State of operation">
                                         @if ($errors->has('state'))
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $errors->first('state') }}</strong>
@@ -98,6 +98,17 @@
                                                                     
                                     </div>
                                 </div>
+
+                                 <div class="mt-10">
+                                    <input id="service" type="text" class="form-control{{ $errors->has('service') ? ' is-invalid' : '' }}" name="service" value="{{ old('service') }}" required placeholder="What is your specialty" >
+
+                                        @if ($errors->has('service'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('service') }}</strong>
+                                            </span>
+                                        @endif
+                                </div>
+                           
                                 <div class="mt-10">
                                     <input id="certification" type="text" class="form-control{{ $errors->has('certification') ? ' is-invalid' : '' }}" name="certification" value="{{ old('certification') }}" required autofocus  placeholder="Certification" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Cerification'" >
                                     @if ($errors->has('certification'))
@@ -127,16 +138,7 @@
                                 </div>
                                 
                                 
-                                <div class="mt-10">
-                                    <input id="service" type="text" class="form-control{{ $errors->has('service') ? ' is-invalid' : '' }}" name="service" value="{{ old('service') }}" required placeholder="What Kind of Service Do you Offer?" onfocus="this.placeholder = 'What Kind of Service Do you Offer?'" onblur="this.placeholder = 'What Kind of Service Do you Offer? '">
-
-                                        @if ($errors->has('service'))
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('service') }}</strong>
-                                            </span>
-                                        @endif
-                                </div>
-                           
+                               
                                 <div class="mt-10">
                                                             
                                     <textarea id="description" type="text" class="single-textarea form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" placeholder="Description" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'" value="{{ old('description') }}" required></textarea>

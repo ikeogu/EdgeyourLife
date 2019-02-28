@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Input;
 
 Route::group(['middleware' => ['web']], function(){
 Route::get('/', function () {
-    return view('search.search');
+    return view('index');
 });
 
 
@@ -46,4 +46,15 @@ Route::post('/dashboard',function(){
 
 });
 
+
+Route::any('/search',function(){
+    $q = Input::get ( 'q' );
+    
+    $providers = Provider::where('service', 'LIKE', '%' . $q . "%")->orWhere('name','like','%'. $q .'%' )->orWhere('id','like','%'. $q.'%')->where('address','like','%'. $q .'%' )->orWhere('city','like','%'. $q.'%' )->orWhere('state','like','%'. $q .'%' )->get();
+
+      
+    if(count($providers) > 0)
+        return view('index')->withDetails($providers)->withQuery ( $q );
+    else return view ('index')->withMessage('No Details found. Try to search again !');
+});
 
