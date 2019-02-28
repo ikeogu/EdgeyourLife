@@ -66,7 +66,7 @@
                     <div class="header-wrap">
                         <div class="header-top d-flex justify-content-between align-items-center">
                             <div class="logo">
-                                <a href="index.html"><h3><img src="{{URL::secure_asset('/img/last.jpg')}}" alt="" height="30" width="30"> EdgeyourLife
+                                <a href="index.html"><h3><img src="{{secure_asset('/img/last.jpg')}}" alt="" height="30" width="30"> EdgeyourLife
                                     </h3>
                                     </a>
                             </div>
