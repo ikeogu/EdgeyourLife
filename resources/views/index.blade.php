@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-  
 
         <section class="generic-banner elements-banner relative" style="padding-top:250px; padding-bottom:250px;">
 			<div class="container">
