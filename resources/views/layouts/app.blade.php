@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('img/favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{secure_asset('img/favicon.ico') }}">
 
     <!-- CSRF Token -->
     <meta name="_token" content="{{ csrf_token() }}">
@@ -37,24 +37,24 @@
 
     <!-- Styles -->
   
-        <link rel="stylesheet" href="{{asset('css/linearicons.css')}}">
-		<link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
-		<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-		<link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
-		<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
-		<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-		<link rel="stylesheet" href="{{asset('css/main.css')}}">
+        <link rel="stylesheet" href="{{secure_asset('css/linearicons.css')}}">
+		<link rel="stylesheet" href="{{secure_asset('css/owl.carousel.css')}}">
+		<link rel="stylesheet" href="{{secure_asset('css/font-awesome.min.css')}}">
+		<link rel="stylesheet" href="{{secure_asset('css/nice-select.css')}}">
+		<link rel="stylesheet" href="{{secure_asset('css/magnific-popup.css')}}">
+		<link rel="stylesheet" href="{{secure_asset('css/bootstrap.css')}}">
+		<link rel="stylesheet" href="{{secure_asset('css/main.css')}}">
    <!-- Animation library for notifications   -->
         <script src="js/vendor/jquery-2.2.4.min.js')}}"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		<script src="{{asset('js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('js/jquery.js')}}"></script>
+		<script src="{{secure_asset('js/bootstrap.min.js')}}"></script>
+        <script src="{{secure_asset('js/jquery.js')}}"></script>
 		
-		<script src="{{asset('js/owl.carousel.min.js')}}"></script>
-		<script src="{{asset('js/jquery.nice-select.min.js')}}"></script>
-		<script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+		<script src="{{secure_asset('js/owl.carousel.min.js')}}"></script>
+		<script src="{{secure_asset('js/jquery.nice-select.min.js')}}"></script>
+		<script src="{{secure_asset('js/jquery.magnific-popup.min.js')}}"></script>
 		
-		<script src="{{asset('js/main.js')}}"></script>
+		<script src="{{secure_asset('js/main.js')}}"></script>
 
 
 </head>
@@ -66,7 +66,7 @@
                     <div class="header-wrap">
                         <div class="header-top d-flex justify-content-between align-items-center">
                             <div class="logo">
-                                <a href="index.html"><h3><img src="{{URL::asset('/img/last.jpg')}}" alt="" height="30" width="30"> EdgeyourLife
+                                <a href="index.html"><h3><img src="{{URL::secure_asset('/img/last.jpg')}}" alt="" height="30" width="30"> EdgeyourLife
                                     </h3>
                                     </a>
                             </div>
