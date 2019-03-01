@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Dashboard</title>
+	<title> StreetSmart Dashboard</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -72,7 +72,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
-                        EdgeYourLife
+                    StreetSmart
                     </a>
                 </div>
 
@@ -195,7 +195,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
-                        EdgeYourLife
+                    StreetSmart
                     </a>
                 </div>
 

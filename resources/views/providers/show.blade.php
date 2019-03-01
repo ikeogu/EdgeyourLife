@@ -8,8 +8,11 @@
 
 
           <div class="section-top-border">
-                <h3 class="mb-30">Details</h3>
+                
                 <div class="row  align-items-center justify-content-center">
+				<h3 class="mb-90  ">Details</h3>
+				<span></span>
+				<span></span>
                   <div class="col-xs-6 col-sm-3 placeholder " >
                     <img src="/storage/logo/{{$provider->logo}}" width="150" height="150" class="img-responsive rounded" style="margin-left:50px;">
                   </div>

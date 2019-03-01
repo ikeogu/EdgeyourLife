@@ -29,7 +29,7 @@ Route::get('/myservicefeedbacks','feedBackController@myfeedback')->name('myfeedb
 
 
 Route::get('/','SearchController@index')->name('see');
-Route::get('/search','SearchController@search');
+
 Route::post('api/track-click','ApiController@addClick');
 
 
@@ -47,14 +47,13 @@ Route::post('/dashboard',function(){
 });
 
 
-Route::any('/search',function(){
+Route::any('/searching_services...',function(){
     $q = Input::get ( 'q' );
-    
-    $providers = Provider::where('service', 'LIKE', '%' . $q . "%")->orWhere('name','like','%'. $q .'%' )->orWhere('id','like','%'. $q.'%')->where('address','like','%'. $q .'%' )->orWhere('city','like','%'. $q.'%' )->orWhere('state','like','%'. $q .'%' )->get();
+    $providers = Provider::where('service', 'LIKE', '%' . $q . "%")->orWhere('name','LIKE','%'. $q .'%' )->orWhere('id','LIKE','%'. $q.'%')->orWhere('address','LIKE','%'. $q .'%' )->orWhere('city','LIKE','%'. $q.'%' )->orWhere('state','LIKE','%'. $q .'%' )->get();
 
-      
+        
     if(count($providers) > 0)
-        return view('index')->withDetails($providers)->withQuery ( $q );
-    else return view ('index')->withMessage('No Details found. Try to search again !');
+        return view('index')->withDetails($providers)->withQuery ($q);
+    else return view ('index')->withMessage('Not found. Try to search again !');
 });
 
