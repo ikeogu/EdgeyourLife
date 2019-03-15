@@ -16,9 +16,17 @@ class SearchController extends Controller
      */
     public function index()
     {
-        return view('index');
+        return view('search.search');
     }
 
+    public function autocomplete(Request $request)
+    {
+        $data = Provider::select("name")
+                ->where("name","LIKE","%{$request->input('query')}%")
+                ->get();
+   
+        return response()->json($data);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -46,10 +54,7 @@ class SearchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -85,9 +90,17 @@ class SearchController extends Controller
         //
     }
 
-
+     public function search(Request $request)
+     {
+    //     $query = Request::input('search');
+        
+    
+    //        $providers = DB::table('providers')->where('service', 'LIKE', '%' . $query . "%")->orWhere('name','like','%'. $query .'%' )->orWhere('id','like','%'. $query.'%')->where('address','like','%'. $query .'%' )->orWhere('city','like','%'. $query.'%' )->orWhere('state','like','%'. $query .'%' )->get();
+    
+    //     return view('search.search', compact('providers','query'));
+    
    
-  // Gets the query string from our form submission 
+//   // Gets the query string from our form submission 
 //    if($request->ajax())
 //    {
 //        $query = " ";
@@ -96,27 +109,23 @@ class SearchController extends Controller
 //        if($providers)
 //        {
 //            foreach ($providers as $key => $provider){
-//                $query.="<div class='row'>
-                                                    
-//                <div class='col-md-4 mt-sm-10' style='padding-top:30px;'>
-                
-//                     <div class=''>
-//                         <div class='row'>
-//                             <div class='col-lg-4 col-sm-2 col-md-2'>
-//                                 <img src='/storage/logo/$provider->logo' width='50' height='50' class='img-fluid img-responsive'> 
-//                             </div>
-//                             <div class='col-lg-8 col-sm-10 col-md-10'>
-//                                 <h5 style='color:black;>  $provider->name</h5>   
-                            
-//                                 <h5 style='color:black;> $provider->service </h5>
-//                                 <a href='/providers/$provider->id' onclick='trackClick(this)'>view more</a> 
-//                             </div>
-//                         </div>
-//                         <hr>
-//                     </div> 
-                  
-//                </div>        
-//            </div>";
+//                $query.="<h3><a href='/providers/$provider->id'>$provider->name</a></h3>
+               
+//                <a href='/providers/$provider->id'>view more</a>
+//                <h5>$provider->description</h5>";
+//                $query.="
+//                <div class='col-lg-4 col-sm-3 col-md-3'>
+//                <img src='/storage/logo/$provider->logo' class='img-fluid img-responsive '> 
+//               </div>
+//                ";
+//                $query.="
+//                 <div>
+//                 <h3>$provider->address</h3>
+//                 <h4>$provider->email</h4>
+//                 <h4>$provider->phone</h4>
+//                 </div>
+//                ";
+               
 //            }
 //            return Response($query);
 //         }
@@ -125,7 +134,8 @@ class SearchController extends Controller
 //                 $query="Service Not Found";
 //              return back()->with($query);
 //          }
-//    }
+//     }   
+   }
   
   // Returns an array of articles that have the query string located somewhere within 
   // our articles titles. Paginates them so we can break up lots of search results.

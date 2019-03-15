@@ -5,21 +5,21 @@
         <section class="generic-banner elements-banner relative" style="padding-top:250px; padding-bottom:250px;">
 			<div class="container">
 				
-                <div class="row  align-items-left justify-content-left">
+                <div class="row justify-content-center">
 					<div class="col-lg-9 col-sm-9 col-md-9">
 						<div class="banner-content text-center">
 							
 							                           
-                            <form action="/searching_services..." method="POST" >
+                            <form action="/searching_services" method="get" >
                                 {{ csrf_field() }}
                                 
                                 <div class="input-group ">
                                     <div class="input-group md-form form-sm form-3 pl-0">
-                                        <input class="form-control my-0 py-1 lime-border" type="text" placeholder=" Search for services" aria-label="Search" name="q" id="search">
+                                        <input class="form-control my-0 py-1 " type="text" placeholder=" Search for services"  name="q" id="search">
                                             <div class="input-group-append">
                                                 <span class="input-group-text lime lighten-2" id="basic-text1">
                                                     <button type="submit" class="btn btn-default">
-                                                        <i class="fa fa-search text-grey" aria-hidden="true"></i>
+                                                        <i class="fa fa-search" ></i>
                                                     </button>
                                                 </span>		
                                             </div>
@@ -33,13 +33,13 @@
                             @if(isset($details))
                                     <p>  results for <b> {{ $query }} </b></p>
                                     <div class="tab">
-                                        <button class="tablinks" onclick="openCity(event, 'all')">All</button>
-                                        <button class="tablinks" onclick="openCity(event, 'image')">Image</button>
-                                        <button class="tablinks" onclick="openCity(event, 'contact')">contact</button>
+                                        <button class="tablinks" onclick="openCity(event, 'all')" id="defaultOpen"  >All</button>
+                                        <button class="tablinks" onclick="openCity(event, 'image')" >Image</button>
+                                        <button class="tablinks" onclick="openCity(event, 'contact')" >contact</button>
                                     </div>
 
-                                    <div id="all" class="tabcontent">
-                                        <h3>All</h3>
+                                    <div id="all" class="tabcontent " style="display:none">
+                                        
                                         <hr>
                                         <span></span>
                                         <span></span>
@@ -51,8 +51,8 @@
                                     
                                     </div>
 
-                                    <div id="image" class="tabcontent">
-                                        <h3>Logo</h3>
+                                    <div id="image" class="tabcontent " style="display:none">
+                                        
                                         <hr>
                                         <span></span>
                                         <span></span>
@@ -65,8 +65,8 @@
                                         </div>
                                     </div>
 
-                                    <div id="contact" class="tabcontent">
-                                        <h3>Contact </h3>
+                                    <div id="contact" class="tabcontent " style="display:none">
+                                       
                                         <hr>
                                         <span></span>
                                         <span></span>
@@ -80,6 +80,8 @@
                                     </div>
                                 
                                     <script>
+                                    document.getElementById("defaultOpen").click();
+
                                     function openCity(evt, cityName) {
                                     var i, tabcontent, tablinks;
                                     tabcontent = document.getElementsByClassName("tabcontent");
@@ -93,6 +95,16 @@
                                     document.getElementById(cityName).style.display = "block";
                                     evt.currentTarget.className += " active";
                                     }
+                                    </script>
+                                    <script type="text/javascript">
+                                        var path = "{{ route('autocomplete') }}";
+                                        $('input.typeahead').typeahead({
+                                            source:  function (query, process) {
+                                            return $.get(path, { query: query }, function (data) {
+                                                    return process(data);
+                                                });
+                                            }
+                                        });
                                     </script>
                                 @endif
                            

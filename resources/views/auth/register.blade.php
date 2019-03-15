@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="padding-top:80px;">
+<div class="container" style="padding-top:250px; padding-bottom:250px;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -53,10 +53,10 @@
                         </div>
 
                           
-                        <label for="role_id" class="col-md-4 col-form-label text-md-right">{{ __('Riister As A') }}</label>
+                        <label for="role_id" class="col-md-4 col-form-label text-md-right">{{ __('Register As A') }}</label>
                         <div class="form-group row">
                         
-                        <label for="role_id" class="col-md-4 col-form-label text-md-right">{{ __('User') }}</label>
+                        <label for="role_id" class="col-md-4 col-form-label text-md-right">{{ __('Customer') }}</label>
 
                         <input type="radio" name="role_id" value="3" checked>
                         <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Service Provider') }}</label>

@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Input;
 
 
 Route::group(['middleware' => ['web']], function(){
-Route::get('/', function () {
-    return view('index');
+Route::get('/search', function () {
+    return view('search.search');
 });
 
 
@@ -28,9 +28,10 @@ Route::get('/myservicefeedbacks','feedBackController@myfeedback')->name('myfeedb
 
 
 
-Route::get('/','SearchController@index')->name('see');
 
-Route::post('api/track-click','ApiController@addClick');
+Route::resource('search','SearchController');
+
+
 
 
 
@@ -46,14 +47,16 @@ Route::post('/dashboard',function(){
 
 });
 
+Route::any('/search?v=', function () {
+    $query = Input::get ( 'q' );
+    $user = Provider::where('service', 'LIKE', '%' . $query . "%")->orWhere('name','like','%'. $query .'%' )->orWhere('id','like','%'. $query.'%')->where('address','like','%'. $query .'%' )->orWhere('city','like','%'. $query.'%' )->orWhere('state','like','%'. $query .'%' )->get();
+    
+    if (count ( $user ) > 0)
+        return view ( 'search.search' )->withDetails ( $user )->withQuery ( $q );
+    else
+        return view ( 'search.search' )->withMessage ( 'No Details found. Try to search again !' );
+} )->name('search');
 
-Route::any('/searching_services...',function(){
-    $q = Input::get ( 'q' );
-    $providers = Provider::where('service', 'LIKE', '%' . $q . "%")->orWhere('name','LIKE','%'. $q .'%' )->orWhere('id','LIKE','%'. $q.'%')->orWhere('address','LIKE','%'. $q .'%' )->orWhere('city','LIKE','%'. $q.'%' )->orWhere('state','LIKE','%'. $q .'%' )->get();
 
-        
-    if(count($providers) > 0)
-        return view('index')->withDetails($providers)->withQuery ($q);
-    else return view ('index')->withMessage('Not found. Try to search again !');
-});
 
+Route::get('autocomplete', 'SearchController@autocomplete')->name('autocomplete');

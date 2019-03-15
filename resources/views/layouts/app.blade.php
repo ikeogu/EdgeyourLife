@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="shortcut icon" href="{{asset('img/favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{secure_assest('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{secure_assest('img/favicon.ico') }}" type="image/x-icon">
 
     <!-- CSRF Token -->
     <meta name="_token" content="{{ csrf_token() }}">
@@ -39,25 +39,28 @@
     
 
     <!-- Styles -->
-  
-        <link rel="stylesheet" href="{{asset('css/linearicons.css')}}">
-		<link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
-		<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-		<link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
-		<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
-		<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-		<link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="{{secure_assest('css/linearicons.css')}}">
+		<link rel="stylesheet" href="{{secure_assest('css/owl.carousel.css')}}">
+		<link rel="stylesheet" href="{{secure_assest('css/font-awesome.min.css')}}">
+		<link rel="stylesheet" href="{{secure_assest('css/nice-select.css')}}">
+		<link rel="stylesheet" href="{{secure_assest('css/magnific-popup.css')}}">
+		<link rel="stylesheet" href="{{secure_assest('css/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{secure_assest('css/main.css')}}">
+        <link rel="stylesheet" href="{{secure_assest('css/app.css')}}">
    <!-- Animation library for notifications   -->
         <script src="js/vendor/jquery-2.2.4.min.js')}}"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		<script src="{{asset('js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('js/jquery.js')}}"></script>
+		<script src="{{secure_assest('js/bootstrap.min.js')}}"></script>
+        <script src="{{secure_assest('js/jquery.js')}}"></script>
 		
-		<script src="{{asset('js/owl.carousel.min.js')}}"></script>
-		<script src="{{asset('js/jquery.nice-select.min.js')}}"></script>
-		<script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+		<script src="{{secure_assest('js/owl.carousel.min.js')}}"></script>
+		<script src="{{secure_assest('js/jquery.nice-select.min.js')}}"></script>
+		<script src="{{secure_assest('js/jquery.magnific-popup.min.js')}}"></script>
 		
-		<script src="{{asset('js/main.js')}}"></script>
+		<script src="{{secure_assest('js/main.js')}}"></script>
 
 
 </head>
@@ -69,8 +72,8 @@
                     <div class="header-wrap">
                         <div class="header-top d-flex justify-content-between align-items-center">
                             <div class="logo">
-                                <a href="index.html"><h3><img src="{{asset('/img/last.png')}}" alt="" height="30" width="30"> StreetSmart
-                                    </h3>
+                                <a href="index.html"><img src="{{secure_assest('/img/last.png')}}" alt="" height="150" width="250"> 
+                                    
                                     </a>
                             </div>
                             <div class="main-menubar d-flex align-items-center">
@@ -97,7 +100,7 @@
 
             <ul class="nav">
                 <li> 
-                    <a href="{{route('feedbacks.create')}}">Give us a feedback  </a>
+                    <a href="{{route('feedbacks.create')}}"><span class="fa fas-comment" style="font-size:20px;"> Give us a feedback</span>  </a>
                 </li>
                 <li></li>
             </ul>
