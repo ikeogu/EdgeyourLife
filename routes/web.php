@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Input;
 
 
 Route::group(['middleware' => ['web']], function(){
-Route::get('/search', function () {
+Route::get('/', function () {
     return view('search.search');
 });
 
