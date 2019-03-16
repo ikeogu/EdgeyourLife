@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="shortcut icon" href="{{secure_asset('img/favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{secure_asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{asset('img/favicon.ico') }}" type="image/x-icon">
 
     <!-- CSRF Token -->
     <meta name="_token" content="{{ csrf_token() }}">
@@ -27,83 +27,89 @@
 
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
             crossorigin="anonymous">
-            
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-   
+     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     
 
     <!-- Styles -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="{{secure_asset('css/linearicons.css')}}">
-		<link rel="stylesheet" href="{{secure_asset('css/owl.carousel.css')}}">
-		<link rel="stylesheet" href="{{secure_asset('css/font-awesome.min.css')}}">
-		<link rel="stylesheet" href="{{secure_asset('css/nice-select.css')}}">
-		<link rel="stylesheet" href="{{secure_asset('css/magnific-popup.css')}}">
-		<link rel="stylesheet" href="{{secure_asset('css/bootstrap.css')}}">
-        <link rel="stylesheet" href="{{secure_asset('css/main.css')}}">
-        <link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
-   <!-- Animation library for notifications   -->
-        <script src="js/vendor/jquery-2.2.4.min.js')}}"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		<script src="{{secure_asset('js/bootstrap.min.js')}}"></script>
-        <script src="{{secure_asset('js/jquery.js')}}"></script>
-		
-		<script src="{{secure_asset('js/owl.carousel.min.js')}}"></script>
-		<script src="{{secure_asset('js/jquery.nice-select.min.js')}}"></script>
-		<script src="{{secure_asset('js/jquery.magnific-popup.min.js')}}"></script>
-		
-		<script src="{{secure_asset('js/main.js')}}"></script>
+    
+    <link rel="stylesheet" href="{{asset('css/argon.css')}}">
+  
+		<script src="{{asset('js/argon.js')}}"></script>
 
 
 </head>
 <body>
-    <div class="oz-body-wrap">
-            <!-- Start Header Area -->
-            <header class="default-header">
-                <div class="container-fluid">
-                    <div class="header-wrap">
-                        <div class="header-top d-flex justify-content-between align-items-center">
-                            <div class="logo">
-                                <a href="index.html"><img src="{{secure_asset('/img/last.png')}}" alt="" height="150" width="250"> 
-                                    
-                                    </a>
-                            </div>
-                            <div class="main-menubar d-flex align-items-center">
-                                <nav class="hide">
-                                <a href="/"><span class="lnr lnr-home" style="font-size:20px;"> Home</span></a>
-                                    <a href="{{route('aboutus')}}">  <span class="lnr lnr-license" style="font-size:20px;"> Aboutus  </span> </a>                       
-                                     <a  href="{{route('login')}}"><span class="lnr lnr-arrow-right" style="font-size:20px;"> Login</span></a>
-                                   <a  href="{{route('register')}}" > <span class="lnr lnr-users" style="font-size:20px;"> Signup</span></a>
-                                                                       
-                                </nav>
-                                <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-                        
+    
+    <header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-expand-lg navbar-dark bg-success ">
+      <div class="container">
+        <a class="navbar-brand mr-lg-5" href="/">
+          <img src="{{asset('/img/last.png')}}" height="75%" width="50%">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="/">
+                  <img src="{{asset('/img/last.png')}}">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
             
-            <main class="py-4">
-                @yield('content')
-            </main>
+            
+           
+          </ul>
+          <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="/" target="_blank" data-toggle="tooltip" title="back home">
+                <i class="fa fa-home"></i>
+                <span class="nav-link-inner--text d-lg-none">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="{{route('aboutus')}}" target="_blank" data-toggle="tooltip" title="About Us">
+                <i class="fa fa-user"></i>
+                <span class="nav-link-inner--text d-lg-none">About us</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="{{route('login')}}" target="_blank" data-toggle="tooltip" title="Login">
+                <i class="fa fa-arrow-right"></i>
+                <span class="nav-link-inner--text d-lg-none">Login</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="{{route('register')}}" target="_blank" data-toggle="tooltip" title="Register here">
+                <i class="fa fa-edit"></i>
+                <span class="nav-link-inner--text d-lg-none">Register</span>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>           
+            
+    <main class="py-4">
+        @yield('content')
+       
+    </main>
            <!-- Strat Footer Area -->
-            <section>
-
-            <ul class="nav">
-                <li> 
-                    <a href="{{route('feedbacks.create')}}"><span class="fa fas-comment" style="font-size:20px;"> Give us a feedback</span>  </a>
-                </li>
-                <li></li>
-            </ul>
-            </section>
+            
     </body>
 </html>

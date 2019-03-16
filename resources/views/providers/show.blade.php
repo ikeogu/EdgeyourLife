@@ -2,126 +2,60 @@
 
 @section('content')
 
-          
- <section class="feature-area pt-100 pb-100  relative" style="padding-top: 40px;">
-          
-
-
-          <div class="section-top-border">
-                
-                <div class="row  align-items-center justify-content-center">
-				<h3 class="mb-90  ">Details</h3>
-				<span></span>
-				<span></span>
-                  <div class="col-xs-6 col-sm-3 placeholder " >
-                    <img src="/storage/logo/{{$provider->logo}}" width="150" height="150" class="img-responsive rounded" style="margin-left:50px;">
-                  </div>
+<div class="container shape-container d-flex align-items-center ">
+          <div class="col px-0" style="padding-top:300px;">
+        <div class="card card-profile shadow mt--300">
+          <div class="px-4">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <a href="#">
+                    <img src="/storage/logo/{{$provider->logo}}" class="rounded-circle" height="75%" width="50%">
+                  </a>
                 </div>
-		            <div class="progress-table-wrap">
-		                <div class="progress-table">
-		                    <div class="table-head">
-		                        <div class="serial">#</div>
-		                        <div class="country">Attributes</div>
-		                        <div class="visit">Description</div>
-		                    </div>
-		                    <div class="table-row">
-                        <div class="serial">01</div>
-		                        <div class="visit">Providers Name</div>
-		                        <div class="percentage">
-		                            <div class="progress">
-                                {{ $provider->name }}
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <div class="table-row">
-                        <div class="serial">02</div>
-		                        <div class="visit">Description </div>
-		                        <div class="percentage">
-		                            <div class="progress">
-                                {{ $provider->description}}
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <div class="table-row">
-                        <div class="serial">03</div>
-		                        <div class="visit">Location</div>
-		                        <div class="percentage">
-		                            <div class="progress">
-                                {{ $provider->address }}
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <div class="table-row">
-                        <div class="serial">04</div>
-		                        <div class="visit">City</div>
-		                        <div class="percentage">
-		                            <div class="progress">
-                                {{$provider->city}}  
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <div class="table-row">
-		                        <div class="serial">05</div>
-		                        
-		                        <div class="visit">State</div>
-		                        <div class="percentage">
-		                            <div class="progress">
-		                             {{$provider->state}}
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <div class="table-row">
-		                        <div class="serial">06</div>
-		                        
-		                        <div class="visit">Phone Number</div>
-		                        <div class="percentage">
-		                            <div class="progress">
-                                {{ $provider->phone}}
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <div class="table-row">
-		                        <div class="serial">07</div>
-		                        
-		                        <div class="visit">Email Address</div>
-		                        <div class="percentage">
-		                            <div class="progress">
-                                {{ $provider->email}}
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <div class="table-row">
-		                        <div class="serial">08</div>                      
-  
-		                        <div class="visit"> Qualification</div>
-		                        <div class="percentage">
-		                            <div class="progress">
-                                {{ $provider->qualification}}
-		                            </div>
-		                        </div>
-                        </div>
-                        <div class="table-row">
-		                        <div class="serial">09</div>                      
-  
-		                        <div class="visit"> Special Tools for Services</div>
-		                        <div class="percentage">
-		                            <div class="progress">
-                                {{ $provider->special_tool}}
-		                            </div>
-		                        </div>
-                        </div>
-                        <div class="table-row">
-		                        <div class="serial">10</div>                      
-  
-		                        <div class="visit">minimum Price</div>
-		                        <div class="percentage">
-		                            <div class="progress">
-                                {{ $provider->minimum_price}}
-		                            </div>
-		                        </div>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-	</section>
+              </div>
+              <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+                <div class="card-profile-actions py-4 mt-lg-0">
+                  <a href="#" class="btn btn-sm btn-info mr-4">{{ $provider->name }}</a>
+                  <a href="#" class="btn btn-sm btn-default float-right">{{ $provider->phone}}</a>
+                </div>
+              </div>
+              <div class="col-lg-4 order-lg-1">
+                <div class="card-profile-stats d-flex justify-content-center">
+                  <div>
+                    <span class="heading">{{ $provider->city }}</span>
+                    <span class="description">City</span>
+                  </div>
+                  <div>
+                    <span class="heading">{{ $provider->state }}</span>
+                    <span class="description">State</span>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-5">
+              <h3>{{ $provider->service}}
+                <span class="font-weight-light"></span>
+              </h3>
+              <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>{{ $provider->address}}</div>
+              <div class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i><h4>Special Tools :{{ $provider->special_tool}}</h4></div>
+              <div><i class="ni education_hat mr-2"></i>
+			  <h4>Qualification :{{ $provider->certification}}</h4></div>
+            </div>
+            <div class="mt-5 py-5 border-top text-center">
+              <div class="row justify-content-center">
+                <div class="col-lg-9">
+				<h4>{{ $provider->email}}</h4>
+                  <h4> {{ $provider->description}}</h4>
+                 <h4>{{ $provider->minimum_price}}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+	</div>
 @endsection

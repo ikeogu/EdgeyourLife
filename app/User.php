@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
+    const ACTIVE = 1;
+    const INACTIVE = 0;
 
     /**
      * The attributes that are mass assignable.
@@ -22,7 +24,7 @@ class User extends Authenticatable
           'phone',
           
           'role_id',
-          
+          'token', 'active','username',
     ];
 
     /**
@@ -60,15 +62,4 @@ class User extends Authenticatable
         ->groupBy('user_id');
     }
 
-    public function getProvidersCountAttribute()
-        {
-        // if relation is not loaded already, let's do it first
-        if ( ! array_key_exists('providersCount', $this->relations)) 
-            $this->load('providersCount');
-        
-        $related = $this->getRelation('providersCount');
-        
-        // then return the count directly
-        return ($related) ? (int) $related->aggregate : 0;
-        }
 }

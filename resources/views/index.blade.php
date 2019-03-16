@@ -1,119 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
-
-        <section class="generic-banner elements-banner relative" style="padding-top:250px; padding-bottom:250px;">
-			<div class="container">
-				
-                <div class="row justify-content-center">
-					<div class="col-lg-9 col-sm-9 col-md-9">
-						<div class="banner-content text-center">
-							
-							                           
-                            <form action="/searching_services" method="get" >
-                                {{ csrf_field() }}
-                                
-                                <div class="input-group ">
-                                    <div class="input-group md-form form-sm form-3 pl-0">
-                                        <input class="form-control my-0 py-1 " type="text" placeholder=" Search for services"  name="q" id="search">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text lime lighten-2" id="basic-text1">
-                                                    <button type="submit" class="btn btn-default">
+<div class="position-relative">
+     
+        <div class="container shape-container d-flex align-items-center py-lg">
+          <div class="col px-0">
+            <div class="align-items-center justify-content-center">
+            <div class="row">
+                    <div class="col col-lg-12 col-md-12 text-center">   
+                        <img src="{{asset('/img/ser.jpg')}}" height="250" width="300">             
+                        <form action="{{route('search')}}" method="get">
+                            {{ csrf_field() }}
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <div class="input-group mb-5">
+                                            <div class="input-group-prepend"> 
+                                                <span class="input-text">
+                                                    <button type="submit" class="btn btn-default btn-md-2">
                                                         <i class="fa fa-search" ></i>
                                                     </button>
-                                                </span>		
+                                                </span>
                                             </div>
-                                    </div>
-                                </div>		
-                            </form>
-                        </div> 
-                        
-                    
-                        
-                            @if(isset($details))
-                                    <p>  results for <b> {{ $query }} </b></p>
-                                    <div class="tab">
-                                        <button class="tablinks" onclick="openCity(event, 'all')" id="defaultOpen"  >All</button>
-                                        <button class="tablinks" onclick="openCity(event, 'image')" >Image</button>
-                                        <button class="tablinks" onclick="openCity(event, 'contact')" >contact</button>
-                                    </div>
-
-                                    <div id="all" class="tabcontent " style="display:none">
-                                        
-                                        <hr>
-                                        <span></span>
-                                        <span></span>
-                                        @foreach($details as $provider)
-                                        <h3><a href='/providers/{{$provider->id}}'>{{$provider->name}} </a></h3>
-                                        <a href='/providers/{{$provider->id}}'>view more</a>
-                                        <h5>{{$provider->description}}</h5>
-                                        @endforeach
-                                    
-                                    </div>
-
-                                    <div id="image" class="tabcontent " style="display:none">
-                                        
-                                        <hr>
-                                        <span></span>
-                                        <span></span>
-                                        <div class="row">
-                                        @foreach($details as $provider)
-                                        <div class="col-lg-4 col-sm-3 col-md-3">
-                                         <img src='/storage/logo/{{$provider->logo}}' class='img-fluid img-responsive '> 
-                                        </div>
-                                        @endforeach
+                                            <input class="form-control" placeholder=" Search for service" type="text" name="q">
                                         </div>
                                     </div>
-
-                                    <div id="contact" class="tabcontent " style="display:none">
-                                       
-                                        <hr>
-                                        <span></span>
-                                        <span></span>
-                                        @foreach($details as $provider)
-                                        <div>
-                                        <h3>{{$provider->address}}</h3>
-                                        <h4>{{$provider->email}}.</h4>
-                                        <h4>{{$provider->phone}}</h4>
-                                      </div>
-                                      @endforeach
-                                    </div>
-                                
-                                    <script>
-                                    document.getElementById("defaultOpen").click();
-
-                                    function openCity(evt, cityName) {
-                                    var i, tabcontent, tablinks;
-                                    tabcontent = document.getElementsByClassName("tabcontent");
-                                    for (i = 1; i < tabcontent.length; i++) {
-                                        tabcontent[i].style.display = "none";
-                                    }
-                                    tablinks = document.getElementsByClassName("tablinks");
-                                    for (i = 0; i < tablinks.length; i++) {
-                                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                                    }
-                                    document.getElementById(cityName).style.display = "block";
-                                    evt.currentTarget.className += " active";
-                                    }
-                                    </script>
-                                    <script type="text/javascript">
-                                        var path = "{{ route('autocomplete') }}";
-                                        $('input.typeahead').typeahead({
-                                            source:  function (query, process) {
-                                            return $.get(path, { query: query }, function (data) {
-                                                    return process(data);
-                                                });
-                                            }
-                                        });
-                                    </script>
-                                @endif
-                           
+                                </div>
+                            </div>    
+                        </form>
                     </div>
                 </div>
-			</div>
-
-        </section>
-  
+            </div>
+          </div>
+        </div>
+        
+    </div>
+            
+    <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                <li class="nav-item"> 
+                    <a href="{{route('feedbacks.create')}}"><span> <i class="fa fa-comment" ></i style="font-size:20px;"> feedback</span>  </a>
+                </li>
+                
+            </ul>
 @endsection
 
     

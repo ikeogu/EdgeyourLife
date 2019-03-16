@@ -13,7 +13,8 @@
 		                    <div class="table-head">
 		                        <div class="serial">#</div>
 		                        <div class="visit"> Name</div>
-		                        <div class="percentage"> Email</div>
+	
+    	                        <div class="percentage"> Email</div>
                                
                                 <div class="visit"> Phone</div>
 		                    </div>

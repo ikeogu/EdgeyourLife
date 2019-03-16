@@ -7,10 +7,9 @@
 					<div class="col-lg-6">
 						<div class="story-content">
 							<h2>Brief Information <br>
-							About <span>Edge Your Life</span></h2>
+							About <span>Street Smart</span></h2>
 							<p class="mt-30">Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. <br> <br>
-                            Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace.Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace.Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace.
-							While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,”
+                           
 							</p>
 							
 						</div>

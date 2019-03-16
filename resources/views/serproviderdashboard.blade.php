@@ -2,10 +2,10 @@
 
 @section('others')
 <div class="generic-banner elements-banner relative" >
-    <div class="container-fluid">
-    <div class="well">
-        <h4>Analytic Overview</h4>
-    </div>
+    <div class="container-fluid" styles="paddding-top:20px;">
+        <div class="well">
+            <h4>Analytic Overview</h4>
+        </div>
         <div class="row">
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-lg-3">

@@ -10,8 +10,7 @@
                     <div id="mapholder">
     
                      </div>
-                    {{$user = new POI($_GET["latitude"], $_GET["longitude"])}} 
-                        {{ $user->getDistanceInMetersTo($poi)}}
+                    
 						<form action="/dashboard" method="POST" role="search">
                                 {{ csrf_field() }}
                                 <div class="input-group ">

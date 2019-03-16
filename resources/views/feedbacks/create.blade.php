@@ -1,16 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
-<section style="padding-top:100px;">
     @if(Auth::user())
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class=" card-header">
-                              <h4 class="title">{{ __('Kindly give us a feedback. ') }}</h4>
-                        </div>
+    <section class="section section-lg pt-lg-0 section-contact-us">
+      <div class="container">
+        <div class="row justify-content-center mt--300">
+          <div class="col-lg-8">
                         <div class="content">
                             @if ($errors->any())
                             <div class="alert alert-danger">
@@ -27,59 +22,59 @@
                             </div><br />
                             @endif
                         </div>
-                        
-                        <div class="col-lg-8 col-md-8">
-                            <h3 class="mb-30">FeedBack on Service provided to You</h3>
-                            <form method="POST" action="{{ route('feedbacks.store') }}" enctype="multipart/form-data">
+            <div class="card bg-gradient-secondary shadow">
+              <div class="card-body p-lg-5">
+                <h4 class="mb-1">Kindly give us a feedback</h4>
+                <p class="mt-0">Your satisfaction is very important to us.</p>
+                <h3 class="mb-30">FeedBack on Service provided to You</h3>
+                <form method="POST" action="{{ route('feedbacks.store') }}" enctype="multipart/form-data">
                             @csrf
-                                <div class="mt-10">
-                                    <input type="text" name="name" placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required="" class="single-input" value="{{ Auth::user()->name }}">
-                                   
-                                   
-                                </div>
-                                <div class="mt-10">
-                                    <input type="text" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required="" class="single-input" value="{{ Auth::user()->email}}">
-
-                                     @if ($errors->has('email'))
-                                            <span class="invalid-feedback" role="alert">
-                                               <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
-                                        @endif
-                                </div>
-                               
-                                <div class="input-group-icon mt-10">
-                                <p> Choose the name of Service provider</p>
-                                {{ Form::select('provider_id', $services, ['class' => 'form-control']) }}
-                                </div> 
-
-                                
-                                <div class="mt-10">
-                                   <textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required="" name="feed_back"></textarea>
-                                   @if ($errors->has('feed_back'))
-                                            <span class="invalid-feedback" role="alert">
-                                               <strong>{{ $errors->first('feed_back') }}</strong>
-                                            </span>
-                                        @endif
-                                   
-                                </div>
-                                <div>
-                                {!! str_repeat('<i class="fa fa-star" aria-hidden="true"></i>', $review->rate) !!}
-                                {!! str_repeat('<i class="fa fa-star-o" aria-hidden="true"></i>', 5 - $review->rate) !!}
-                                </div>
-                                <div class="form-group row mb-0" style="padding-top:30px;">
-                                <button class="genric-btn primary circle pull-right" type="submit"> {{ __('Send') }}</button>
-                                </div>
-                            </form>
+                    <div class="form-group mt-5">
+                        <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-user-run"></i></span>
+                            </div>
+                            <input type="text" name="name" placeholder="Full Name"  class="form-control" class="single-input" value="{{ Auth::user()->name }}">
                         </div>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                            </div>
+                            <input type="text" name="email" placeholder="Email"  class="form-control"  value="{{ Auth::user()->email}}">
+
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-control" >
+                                <h4> Choose the name of Service provider</h4>
+                                {{ Form::select('provider_id', $services, ['class' => 'form-control']) }}
+                        </div>
+                    </div> 
+                        <div class="form-group mb-4">
+                        <textarea class="form-control form-control-alternative" name="feed_back" rows="4" cols="80" placeholder="Type a message..."></textarea>
+                        </div>
+                       
+                        <button type="button" class="btn btn-default btn-round btn-block btn-lg">Send Message</button>
+                        </div>
+                    </div>
+                </form>    
             </div>
+          </div>
         </div>
+      </div>
+   
     @else
     <div  style="padding-top:200px; padding-bottom:200px;">
         <center>
             <h3>Sorry! you must login first</h3> 
-            <a href="{{route('login')}}">Login Here</a>
+            <strong><a href="{{route('login')}}">Login Here</a></strong>
         </center>
      </div>
 

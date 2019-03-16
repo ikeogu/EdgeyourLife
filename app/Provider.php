@@ -51,6 +51,6 @@ class Provider extends Model
 
     public function providerfeedback()
     {
-      return $this->belongsToMany('App\User','feedback');
+      return $this->hasMany('App\Feedback');
     }
 }

@@ -38,15 +38,15 @@
 <script type="text/javascript" src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>
 		
         <link rel="stylesheet" href="{{ asset('css/main.css')}}">
-        <script src="js/jquery.ajaxchimp.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/jquery.nice-select.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<script src="js/jquery.counterup.min.js"></script>
-		<script src="js/waypoints.min.js"></script>
-		<script src="js/main.js"></script>
-        <script type="text/javascript" src="js/data.js"></script>
-<script type="text/javascript" src="js/dashboard.js"></script>
+        <script src="{{ asset('js/jquery.ajaxchimp.min.js')}}"></script>
+		<script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+		<script src="{{ asset('js/jquery.nice-select.min.js')}}"></script>
+		<script src="{{ asset('js/jquery.magnific-popup.min.js')}}"></script>
+		<script src="{{ asset('js/jquery.counterup.min.js')}}"></script>
+		<script src="{{ asset('js/waypoints.min.js')}}"></script>
+		<script src="{{ asset('js/main.js')}}"></script>
+        
+        <script type="text/javascript" src="{{ asset('js/dashboard.js')}}"></script>
 
   
 
@@ -60,7 +60,7 @@
 <body>
 @if(Auth::user()->role_id == 1)
     <div class="wrapper">
-        <div class="sidebar" data-color="green" data-image=" img/sidebar-1.jpg">
+        <div class="sidebar" data-color="purple" data-image=" img/sidebar-1.jpg">
 
         <!--
 
@@ -158,7 +158,7 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                   <h4> {{ __('Logout') }}</h4>
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -171,19 +171,14 @@
                 </div>
             </nav>
 
-            <main class="py-4" style="padding-top:20px;">
+            <main class="py-4" style="padding-top:40px;">
                 @yield('others')
             </main> 
-                <footer>   
-                    
-                
-            </footer>
-            
-  
+              
             
     @elseif(Auth::user()->role_id == 2) 
     <div class="wrapper">
-        <div class="sidebar" data-color="green" data-image=" img/sidebar-1.jpg">
+        <div class="sidebar" data-color="purple" data-image=" img/sidebar-1.jpg">
 
         <!--
 
@@ -306,21 +301,14 @@
                 @yield('others')
             </main>
   
-            <footer class="footer">
-                
-                  
-               
-            </footer>
-           
-    @else 
+            
     
- 
      @endif 
     </div>
 </div>
 
 
-</body>
+
 
     <!--   Core JS Files   -->
    
@@ -334,5 +322,5 @@
 	<script src="{{ asset('js/light-bootstrap-dashboard.js')}}"></script>
     <script src=" {{ asset('js/vendor/bootstrap.min.js')}}"></script>
     <script src=" {{ asset('js/vendor/demo.js')}}"></script>
-    
+</body>   
 </html>
