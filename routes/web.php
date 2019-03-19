@@ -56,10 +56,11 @@ Route::any('/searchv=', function () {
     $query = Input::get ('q');
     $user = Provider::where('service', 'LIKE', '%' . $query . "%")->orWhere('name','like','%'. $query .'%' )->orWhere('id','like','%'. $query.'%')->where('address','like','%'. $query .'%' )->orWhere('city','like','%'. $query.'%' )->orWhere('phone','like','%'. $query.'%' )->orWhere('state','like','%'. $query .'%' )->get();
     
-    if (count ( $user ) > 0)
+    if (count ( $user ) > 0){
         return view ( 'search.search' )->withDetails ( $user )->withQuery ( $query );
-    else
-        return view ( 'search.search' )->withDetails ( $user )->withMessage ( 'No Details found. Try to search again !' );
+    }else{
+        Session::flash('warning', ' $user not found. Check spelling !');
+        return view ( 'search.search' );}
 } )->name('search');
 
 Route::get('autocomplete', 'SearchController@autocomplete')->name('autocomplete');

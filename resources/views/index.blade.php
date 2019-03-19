@@ -7,8 +7,12 @@
           <div class="col px-0">
             <div class="align-items-center justify-content-center">
             <div class="row">
+            @if(Session::has('message'))
+            <p class="alert {{ Session::get('alert-class', 'alert-info') }}">
+                {{ Session::get('message') }}</p>
+            @endif
                     <div class="col col-lg-12 col-md-12 text-center">   
-                        <img src="{{asset('/img/dg.png')}}" height="130" width="450">             
+                        <img src="{{asset('/img/dg.png')}}" height="130" width="400">             
                         <form action="{{route('search')}}" method="get">
                             {{ csrf_field() }}
                             <div class="row">
