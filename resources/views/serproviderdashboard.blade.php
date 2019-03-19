@@ -2,7 +2,7 @@
 
 @section('others')
 <div class="generic-banner elements-banner relative" >
-    <div class="container-fluid" styles="paddding-top:20px;">
+    <div class="container-fluid" styles="paddding-top:40px;">
         <div class="well">
             <h4>Analytic Overview</h4>
         </div>

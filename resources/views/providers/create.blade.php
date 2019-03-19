@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('others')
-    <div class="content">
+    <div class="content"style="padding-top:35px;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8">
@@ -151,7 +151,7 @@
                                 </div>
                                 <div class="form-group row mb-0" style="padding-top:30px;">
                                     <center>
-                                <button class="genric-btn primary circle " type="submit"> {{ __('Register') }}</button>
+                                <button class="genric-btn success circle " type="submit"> {{ __('Register') }}</button>
                                 </center>
                                 </div>							
                                                             

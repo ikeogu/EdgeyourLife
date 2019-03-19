@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Session;
 
 class HomeController extends Controller
 {
@@ -25,8 +26,9 @@ class HomeController extends Controller
             return view('admindashboard')->with('users',$total_user);
         }else if($user == 2){
             return view('serproviderdashboard');
-        }else {
-            return view('userdashboard');
+        }else if($user == 3) {
+            Session::flash('sucess', 'Registration was succesful');
+            return view('index');
         }
         
      

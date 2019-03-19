@@ -4,6 +4,9 @@
 <section class="about-area pt-100 pb-100">
 			<div class="container">
 				<div class="row align-items-center">
+				<div class="col-lg-6">
+						<img class="img-fluid d-flex mx-auto" src="img/cus.jpg" alt="">
+					</div>
 					<div class="col-lg-6">
 						<div class="story-content">
 							<h2>Brief Information <br>
@@ -14,9 +17,7 @@
 							
 						</div>
 					</div>
-					<div class="col-lg-6">
-						<img class="img-fluid d-flex mx-auto" src="img/cus.jpg" alt="">
-					</div>
+					
 				</div>
 			</div>
 		</section>

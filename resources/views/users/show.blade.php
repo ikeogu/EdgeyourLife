@@ -3,7 +3,7 @@
 @section('others')
 
 
-<div class="content">
+<div class="content" style="padding-top:35px;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-8">
@@ -39,7 +39,7 @@
                                         </div>
 
 
-                                        <button type="submit" class="genric-btn primary circle pull-right">Update Profile</button>
+                                        <button type="submit" class="genric-btn success circle pull-right">Update Profile</button>
                                         <div class="clearfix"></div>
                                     </form>
                                 </div>
