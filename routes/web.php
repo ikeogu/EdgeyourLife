@@ -60,7 +60,7 @@ Route::any('/searchv=', function () {
         return view ( 'search.search' )->withDetails ( $user )->withQuery ( $query );
     }else{
         Session::flash('warning', ' $user not found. Check spelling !');
-        return view ( 'search.search' );}
+        return view ( 'search.search' )->withDetails ( $user )->withMessage ( 'No Details found. Try to search again !' );}
 } )->name('search');
 
 Route::get('autocomplete', 'SearchController@autocomplete')->name('autocomplete');
