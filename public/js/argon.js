@@ -25,10 +25,7 @@ $(document).ready(function() {
         $this.addClass('collapsing-out');
     });
 
-    $('.navbar-main .collapse').on('hidden.bs.collapse', function () {
-        var $this = $(this);
-        $this.removeClass('collapsing-out');
-    });
+   
 
     $('.navbar-main .dropdown').on('hide.bs.dropdown', function () {
         var $this = $(this).find('.dropdown-menu');

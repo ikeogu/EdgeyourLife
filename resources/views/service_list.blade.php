@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('others')
-<section class="feature-area pt-100 pb-100  relative" style="padding-top: 60px;">
+<section class="pt-100 pb-100  relative" style="padding-top: 60px;">
   <h4 style="color:white;">Services You Registered</h4>
     <div class="overlay overlay-bg"></div>
         @foreach($providers as $provider)
@@ -24,11 +24,11 @@
                                 </div>
                                 <div class="row">
                                     <div class="col col-lg-6">                 
-                                    <p> <a href="providers/{{ $provider->id }}/edit" class="genric-btn primary circle"            role="button">view</a>
+                                    <p> <a href="providers/{{ $provider->id }}/edit" class="genric-btn success circle"            role="button">view</a>
                                     </p> 
                                     </div> 
                                     <div class="col col-lg-6">  
-                                        <p> <a href="#" class="genric-btn primary circle" role="button"
+                                        <p> <a href="#" class="genric-btn danger circle" role="button"
                                                 onClick=" 
                                                 var result= confirm('Are you sure you want to delete this Service?');
                                                 if ( result ){

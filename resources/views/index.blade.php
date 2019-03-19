@@ -8,7 +8,7 @@
             <div class="align-items-center justify-content-center">
             <div class="row">
                     <div class="col col-lg-12 col-md-12 text-center">   
-                        <img src="{{asset('/img/ser.jpg')}}" height="250" width="300">             
+                        <img src="{{asset('/img/dg.png')}}" height="130" width="450">             
                         <form action="{{route('search')}}" method="get">
                             {{ csrf_field() }}
                             <div class="row">
@@ -17,7 +17,7 @@
                                         <div class="input-group mb-5">
                                             <div class="input-group-prepend"> 
                                                 <span class="input-text">
-                                                    <button type="submit" class="btn btn-default btn-md-2">
+                                                    <button type="submit" class="btn btn-success btn-md-2">
                                                         <i class="fa fa-search" ></i>
                                                     </button>
                                                 </span>

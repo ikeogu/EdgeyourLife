@@ -60,7 +60,7 @@
 <body>
 @if(Auth::user()->role_id == 1)
     <div class="wrapper">
-        <div class="sidebar" data-color="purple" data-image=" img/sidebar-1.jpg">
+        <div class="sidebar" data-color="green" data-image=" img/sidebar-1.jpg">
 
         <!--
 
@@ -72,7 +72,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
-                    StreetSmart
+                    EYL
                     </a>
                 </div>
 
@@ -178,7 +178,7 @@
             
     @elseif(Auth::user()->role_id == 2) 
     <div class="wrapper">
-        <div class="sidebar" data-color="purple" data-image=" img/sidebar-1.jpg">
+        <div class="sidebar" data-color="green" data-image=" img/sidebar-1.jpg">
 
         <!--
 
@@ -190,7 +190,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
-                    StreetSmart
+                    EYL
                     </a>
                 </div>
 

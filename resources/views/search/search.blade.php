@@ -8,7 +8,7 @@
             <div class="align-items-center justify-content-center">
                 <div class="row">
                     <div class="col col-lg-12 col-md-12 text-center">   
-                        <img src="{{asset('/img/ser.jpg')}}" height="250" width="300">             
+                        <img src="{{asset('/img/dg.png')}}" height="250" width="300">             
                         <form action="{{route('search')}}" method="get">
                             {{ csrf_field() }}
                             <div class="row">
@@ -17,7 +17,7 @@
                                         <div class="input-group mb-5">
                                             <div class="input-group-prepend"> 
                                                 <span class="input-text">
-                                                    <button type="submit" class="btn btn-primary btn-md-2">
+                                                    <button type="submit" class="btn btn-success btn-md-2">
                                                         <i class="fa fa-search" ></i>
                                                     </button>
                                                 </span>
@@ -46,9 +46,9 @@
                                 <div>
                                     <span class="badge badge-pill ">{{$provider->city}}</span>
                                     <span class="badge badge-pill ">{{str_limit($provider->service, $limit = 20, $end = '...')}}</span>
-                                    <span class="badge badge-pill ">{{$provider->amount}}</span>
+                                    <span class="badge badge-pill ">₦ {{$provider->minimum_price}}</span>
                                 </div>
-                                <a href="/providers/{{$provider->id}}" class="btn btn-primary mt-4">View</a>
+                                <a href="/providers/{{$provider->id}}" class="btn btn-success mt-4">View</a>
                             </div>
                         </div>
                     </div>

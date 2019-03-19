@@ -48,7 +48,7 @@
                 <div class="col-lg-9">
 				<h4>{{ $provider->email}}</h4>
                   <h4> {{ $provider->description}}</h4>
-                 <h4>{{ $provider->minimum_price}}</h4>
+                 <h4>₦{{ $provider->minimum_price}}</h4>
                 </div>
               </div>
             </div>

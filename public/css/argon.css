@@ -24,7 +24,7 @@
     --red: #f5365c;
     --orange: #fb6340;
     --yellow: #ffd600;
-    --green: #2dce89;
+    --green: #00ff00;
     --teal: #11cdef;
     --cyan: #2bffc6;
     --white: #fff;
@@ -34,7 +34,7 @@
     --lighter: #e9ecef;
     --primary: #5e72e4;
     --secondary: #f4f5f7;
-    --success: #2dce89;
+    --success: #00ff00;
     --info: #11cdef;
     --warning: #fb6340;
     --danger: #f5365c;
@@ -3060,14 +3060,14 @@ fieldset:disabled a.btn
 {
     color: #fff;
     border-color: #2dce89;
-    background-color: #2dce89;
+    background-color: #39d639;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
 .btn-success:hover
 {
     color: #fff;
     border-color: #2dce89; 
-    background-color: #2dce89;
+    background-color: #39d639;
 }
 .btn-success:focus,
 .btn-success.focus
@@ -7988,7 +7988,8 @@ button.bg-secondary:focus
 
 .bg-success
 {
-    background-color: #2dce89 !important;
+    background-color: #06ca06 !important;
+    
 }
 
 a.bg-success:hover,
@@ -7996,7 +7997,7 @@ a.bg-success:focus,
 button.bg-success:hover,
 button.bg-success:focus
 {
-    background-color: #24a46d !important;
+    background-color: #00ff00 !important;
 }
 
 .bg-info
@@ -15493,10 +15494,7 @@ textarea[resize='horizontal']
     font-size: 4.25rem;
 }
 
-.icon-xl + .icon-text
-{
-    width: calc(100% - $icon-size-xl - 1);
-}
+
 
 .icon-lg
 {
@@ -15509,10 +15507,6 @@ textarea[resize='horizontal']
     font-size: 3.25rem;
 }
 
-.icon-lg + .icon-text
-{
-    width: calc(100% - $icon-size-lg - 1);
-}
 
 .icon-sm
 {
@@ -15525,10 +15519,6 @@ textarea[resize='horizontal']
     font-size: 1.25rem;
 }
 
-.icon-sm + .icon-text
-{
-    width: calc(100% - $icon-size-sm - 1);
-}
 
 .icon-shape
 {
@@ -15897,10 +15887,7 @@ textarea[resize='horizontal']
     color: #fff;
 }
 
-.modal-warning .close > span:not(.sr-only)
-{
-    color: #fff;
-}
+
 
 .modal-danger .modal-title
 {

@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="shortcut icon" href="{{secure_asset('img/favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{secure_asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{asset('img/favicon.ico') }}" type="image/x-icon">
 
     <!-- CSRF Token -->
     <meta name="_token" content="{{ csrf_token() }}">
@@ -35,19 +35,19 @@
 
     <!-- Styles -->
     
-    <link rel="stylesheet" href="{{secure_asset('css/argon.css')}}">
-  
-		<script src="{{secure_asset('js/argon.js')}}"></script>
-
+    <link rel="stylesheet" href="{{asset('css/argon.css')}}">
+   
+		<script src="{{asset('js/argon.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
 
 </head>
 <body>
     
-    <header class="header-global">
+  <header class="header-global">
     <nav id="navbar-main" class="navbar navbar-expand-lg navbar-dark bg-success ">
       <div class="container">
         <a class="navbar-brand mr-lg-5" href="/">
-          <img src="{{secure_asset('img/last.png')}}" height="75%" width="50%">
+          <img src="" height="75%" width="50%">EYL
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@
             <div class="row">
               <div class="col-6 collapse-brand">
                 <a href="/">
-                  <img src="{{secure_asset('img/last.png')}}">
+                  <img src="{{asset('img/last.png')}}">
                 </a>
               </div>
               <div class="col-6 collapse-close">
@@ -68,11 +68,7 @@
               </div>
             </div>
           </div>
-          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-            
-            
-           
-          </ul>
+          
           <ul class="navbar-nav align-items-lg-center ml-lg-auto">
             <li class="nav-item">
               <a class="nav-link nav-link-icon" href="/" target="_blank" data-toggle="tooltip" title="back home">
@@ -101,7 +97,7 @@
             
           </ul>
         </div>
-      </div>
+      
     </nav>
   </header>           
             
