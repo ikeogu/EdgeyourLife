@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="shortcut icon" href="{{asset('img/favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{secure_asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{secure_asset('img/favicon.ico') }}" type="image/x-icon">
 
     <!-- CSRF Token -->
     <meta name="_token" content="{{ csrf_token() }}">
@@ -35,10 +35,10 @@
 
     <!-- Styles -->
     
-    <link rel="stylesheet" href="{{asset('css/argon.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('css/argon.css')}}">
    
-		<script src="{{asset('js/argon.js')}}"></script>
-    <script src="{{asset('js/app.js')}}"></script>
+		<script src="{{secure_asset('js/argon.js')}}"></script>
+    <script src="{{secure_asset('js/app.js')}}"></script>
 
 </head>
 <body>
@@ -57,7 +57,7 @@
             <div class="row">
               <div class="col-6 collapse-brand">
                 <a href="/">
-                  <img src="{{asset('img/last.png')}}">
+                  <img src="{{secure_asset('img/last.png')}}">
                 </a>
               </div>
               <div class="col-6 collapse-close">
