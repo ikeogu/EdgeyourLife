@@ -148,7 +148,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Ghanem\Rating\RatingServiceProvider::class,
-       
+        Kielabokkie\LaravelIpdata\IpdataServiceProvider::class,
       
 
         /*
@@ -214,6 +214,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Ipdata' => Kielabokkie\LaravelIpdata\Facades\Ipdata::class
         
         
         

@@ -38,6 +38,10 @@
           </div>
         </div>
         
+        <div class="row row-grid">
+        <div id="kyquiz"></div><script type="text/javascript" async="" src="http://127.0.0.1:8000/api/js/kyquiz.js" data-quiz="kyquiz" data-key="24" data-name="2662a"></script>
+								
+                </div>
     </div>
             
     <ul class="navbar-nav navbar-nav-hover align-items-lg-center">

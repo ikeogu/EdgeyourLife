@@ -34,5 +34,8 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'ipdata' => [
+        'api_key' => env('IPDATA_API_KEY'),
+    ],
 
 ];

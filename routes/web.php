@@ -2,6 +2,10 @@
 
 use App\Provider;
 use Illuminate\Support\Facades\Input;
+use Kielabokkie\LaravelIpdata\Facades\Ipdata;
+
+
+
 
 Route::get('/aboutus', 'AboutusController@index')->name('aboutus');
 Auth::routes();
@@ -64,3 +68,13 @@ Route::any('/searchv=', function () {
 } )->name('search');
 
 Route::get('autocomplete', 'SearchController@autocomplete')->name('autocomplete');
+
+$res = Ipdata::lookup();
+$curr = $res->city;
+$nearby = Provider::where('city',$curr)->get();
+if(!$nearby  ){
+
+    return view('index',compact($nearby));
+}else{
+    return view('index',compact($nearby));
+}

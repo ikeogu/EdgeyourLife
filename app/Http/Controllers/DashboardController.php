@@ -36,7 +36,7 @@ class DashboardController extends Controller
         }else if($user == 2){
             return view('serproviderdashboard');
         }else {
-            return view('userdashboard');
+            return view('index');
         }
         
      

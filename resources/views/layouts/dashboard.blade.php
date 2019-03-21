@@ -13,40 +13,40 @@
 
 
     <!-- Bootstrap core CSS     -->
-    <link rel="stylesheet" href="{{ secure_asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
 
-   <link href="{{secure_asset('css/animate.min.css')}}" rel="stylesheet"/>
+   <link href="{{asset('css/animate.min.css')}}" rel="stylesheet"/>
 
 <!--  Light Bootstrap Table core CSS    -->
-<link href="{{secure_asset ('css/light-bootstrap-dashboard.css')}}" rel="stylesheet"/>
+<link href="{{asset ('css/light-bootstrap-dashboard.css')}}" rel="stylesheet"/>
 
-    <link href="{{secure_asset('css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
    
-    <link rel="stylesheet" href="{{secure_asset('css/linearicons.css')}}">
+    <link rel="stylesheet" href="{{asset('css/linearicons.css')}}">
 		
-		<link rel="stylesheet" href="{{secure_asset('css/font-awesome.min.css')}}">
-		<link rel="stylesheet" href="{{secure_asset('css/nice-select.css')}}">
+		<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+		<link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
 		 
-<script type="text/javascript" src="{{secure_asset('js/jquery-1.12.4.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/jquery-1.12.4.min.js')}}"></script>
 
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap-theme.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-theme.min.css')}}">
 
-<link rel="stylesheet" type="text/css" href="{{secure_asset('css/main2.css')}}">
-<script type="text/javascript" src="{{secure_asset('js/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="{{secure_asset('js/moment-with-locales.js')}}"></script>
-<script type="text/javascript" src="{{secure_asset('js/bootstrap-datetimepicker.js')}}"></script>
+<link rel="stylesheet" type="text/css" href="{{asset('css/main2.css')}}">
+<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/moment-with-locales.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>
 		
-        <link rel="stylesheet" href="{{ secure_asset('css/main.css')}}">
-        <script src="{{ secure_asset('js/jquery.ajaxchimp.min.js')}}"></script>
-		<script src="{{ secure_asset('js/owl.carousel.min.js')}}"></script>
-		<script src="{{ secure_asset('js/jquery.nice-select.min.js')}}"></script>
-		<script src="{{ secure_asset('js/jquery.magnific-popup.min.js')}}"></script>
-		<script src="{{ secure_asset('js/jquery.counterup.min.js')}}"></script>
-		<script src="{{ secure_asset('js/waypoints.min.js')}}"></script>
-		<script src="{{ secure_asset('js/main.js')}}"></script>
+        <link rel="stylesheet" href="{{ asset('css/main.css')}}">
+        <script src="{{ asset('js/jquery.ajaxchimp.min.js')}}"></script>
+		<script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+		<script src="{{ asset('js/jquery.nice-select.min.js')}}"></script>
+		<script src="{{ asset('js/jquery.magnific-popup.min.js')}}"></script>
+		<script src="{{ asset('js/jquery.counterup.min.js')}}"></script>
+		<script src="{{ asset('js/waypoints.min.js')}}"></script>
+		<script src="{{ asset('js/main.js')}}"></script>
         
-        <script type="text/javascript" src="{{ secure_asset('js/dashboard.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/dashboard.js')}}"></script>
 
   
 
@@ -312,15 +312,15 @@
 
     <!--   Core JS Files   -->
    
-    <script src="{{ secure_asset('js/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('js/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
 		<!--  Charts Plugin -->
-	<script src="{{secure_asset('js/chartist.min.js')}}"></script>
+	<script src="{{asset('js/chartist.min.js')}}"></script>
 
     
 
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-	<script src="{{ secure_asset('js/light-bootstrap-dashboard.js')}}"></script>
-    <script src=" {{ secure_asset('js/vendor/bootstrap.min.js')}}"></script>
-    <script src=" {{ secure_asset('js/vendor/demo.js')}}"></script>
+	<script src="{{ asset('js/light-bootstrap-dashboard.js')}}"></script>
+    <script src=" {{ asset('js/vendor/bootstrap.min.js')}}"></script>
+    <script src=" {{ asset('js/vendor/demo.js')}}"></script>
 </body>   
 </html>

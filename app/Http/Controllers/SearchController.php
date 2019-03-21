@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Input;
 use App\Provider;
+use Kielabokkie\LaravelIpdata\Facades\Ipdata;
 
 class SearchController extends Controller
 {
@@ -16,8 +17,14 @@ class SearchController extends Controller
      */
     public function index()
     {
-        return view('search.search');
-    }
+      
+
+        $res = Ipdata::lookup();
+        $curr = $res->city;
+        $nearby = Provider::where('city',$curr)->get();
+
+        return view('index',compact($nearby));
+    }    
 
     public function autocomplete(Request $request)
     {
