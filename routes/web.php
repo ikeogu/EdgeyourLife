@@ -28,16 +28,23 @@ Route::get('activate/{token}', 'Auth\RegisterController@activate')
     
     Route::get('/service_list', 'DashboardController@listServices')->name('listservices');
     Route::get('/', function () {
-    return view('index');
-    
-    
+        $res = Ipdata::lookup();
 
-    
-    
-
-   
-
-});
+        $curr = $res->city;
+        $curr2 =$res->region;
+        
+        $nearby = Provider::where('state',$curr2)->orwhere('city',$curr)->orwhere('city',$curr2)->orwhere('state',$curr)->get();
+        
+        if($nearby){
+        
+            return view('index',['nearby'=>$nearby]);
+        }else{
+            
+            return back()->with('warning', 'There is no Registered service around your area');
+           
+        }
+    });
+Route::get('search/autocomplete', 'SearchController@autocomplete')->name('autocomplete');
 Route::resource('password','Auth\ForgotPasswordController');
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
@@ -56,25 +63,16 @@ return view('userdashboard')->withMessage("Services in current  Location not fou
 
 
 
-Route::any('/searchv=', function () {
+Route::any('/search', function () {
     $query = Input::get ('q');
-    $user = Provider::where('service', 'LIKE', '%' . $query . "%")->orWhere('name','like','%'. $query .'%' )->orWhere('id','like','%'. $query.'%')->where('address','like','%'. $query .'%' )->orWhere('city','like','%'. $query.'%' )->orWhere('phone','like','%'. $query.'%' )->orWhere('state','like','%'. $query .'%' )->get();
+    $user = Provider::where('service', 'LIKE', '%' . $query . "%")->orWhere('name','like','%'. $query .'%' )->orWhere('id','like','%'. $query.'%')->where('address','like','%'. $query .'%' )->orWhere('city','like','%'. $query.'%' )->orWhere('phone','like','%'. $query.'%' )->orWhere('state','like','%'. $query .'%' )->orWhere('minimum_price','like','%'. $query .'%' )->orWhere('description','like','%'. $query .'%' )->orWhere('certification','like','%'. $query .'%' )->get();
     
     if (count ( $user ) > 0){
         return view ( 'search.search' )->withDetails ( $user )->withQuery ( $query );
     }else{
-        Session::flash('warning', ' $user not found. Check spelling !');
+        Session::flash('warning', ' "$query" not found. Check spelling !');
         return view ( 'search.search' )->withDetails ( $user )->withMessage ( 'No Details found. Try to search again !' );}
 } )->name('search');
 
-Route::get('autocomplete', 'SearchController@autocomplete')->name('autocomplete');
 
-$res = Ipdata::lookup();
-$curr = $res->city;
-$nearby = Provider::where('city',$curr)->get();
-if(!$nearby  ){
 
-    return view('index',compact($nearby));
-}else{
-    return view('index',compact($nearby));
-}

@@ -19,20 +19,28 @@ class SearchController extends Controller
     {
       
 
-        $res = Ipdata::lookup();
-        $curr = $res->city;
-        $nearby = Provider::where('city',$curr)->get();
+       
 
         return view('index',compact($nearby));
     }    
 
     public function autocomplete(Request $request)
-    {
-        $data = Provider::select("name")
-                ->where("name","LIKE","%{$request->input('query')}%")
-                ->get();
+    {$term = Input::get('q');
+	
+        $results = array();
+        
+        $queries = DB::table('providers')
+            ->where('service', 'LIKE', '%'.$term.'%')
+            ->orWhere('name', 'LIKE', '%'.$term.'%')
+            ->take(5)->get();
+        
+        foreach ($queries as $query)
+        {
+            $results[] = [ 'id' => $query->id, 'value' => $query->name.' '.$query->service ];
+        }
+    return Response::json($results);
    
-        return response()->json($data);
+       
     }
     /**
      * Show the form for creating a new resource.

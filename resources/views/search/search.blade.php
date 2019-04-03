@@ -12,18 +12,19 @@
                         <form action="{{route('search')}}" method="get">
                             {{ csrf_field() }}
                             <div class="row">
-                                <div class="col-md-12 col-lg-12">
+                                <div class="col-md-2 col-lg-2 col-sm-2"></div>
+                                <div class="col-md-9 col-lg-9 col-sm-9">
                                     <div class="form-group">
                                         <div class="input-group mb-5">
-                                            <div class="input-group-prepend"> 
+                                            <input class="form-control form-rounded" placeholder=" Search for service" type="text" name="q">
+                                            <div class="input-group-append"> 
                                                 <span class="input-text">
                                                     <button type="submit" class="btn btn-success btn-md-2">
                                                         <i class="fa fa-search" ></i>
                                                     </button>
                                                 </span>
                                             </div>
-                                            <input class="form-control" placeholder=" Search for service" type="text" name="q">
-                                        </div>
+                                        </div>   
                                     </div>
                                 </div>
                             </div>    

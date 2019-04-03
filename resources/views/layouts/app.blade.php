@@ -36,9 +36,21 @@
     <!-- Styles -->
     
     <link rel="stylesheet" href="{{asset('css/argon.css')}}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
    
 		<script src="{{asset('js/argon.js')}}"></script>
     <script src="{{asset('js/app.js')}}"></script>
+    <script type="text/javascript">
+      $(function(){
+      $( "#q" ).autocomplete({
+        source: "search/autocomplete",
+        minLength: 3,
+        select: function(event, ui) {
+          $('#q').val(ui.item.value);
+        }
+      });
+    });
+  </script>
 
 </head>
 <body>
@@ -57,7 +69,7 @@
             <div class="row">
               <div class="col-6 collapse-brand">
                 <a href="/">
-                  <img src="{{asset('img/last.png')}}">
+                  <img src="">
                 </a>
               </div>
               <div class="col-6 collapse-close">
@@ -102,6 +114,7 @@
   </header>           
             
     <main class="py-4">
+         @include('flash-message')
         @yield('content')
        
     </main>
