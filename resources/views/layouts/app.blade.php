@@ -59,7 +59,7 @@
     <nav id="navbar-main" class="navbar navbar-expand-lg navbar-dark bg-success ">
       <div class="container">
         <a class="navbar-brand mr-lg-5" href="/">
-          <img src="{{secure_asset('img/last.png')}}" height="75%" width="50%">EYL
+          <img src="{{secure_asset('img/last.png')}}" height="100%" width="100%">EYL
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@
             <div class="row">
               <div class="col-6 collapse-brand">
                 <a href="/">
-                  <img src="">
+                  <img src="{{secure_asset('img/last.png')}}" height="100%" width="100%">
                 </a>
               </div>
               <div class="col-6 collapse-close">
