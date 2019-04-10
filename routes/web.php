@@ -71,8 +71,11 @@ Route::any('/search', function () {
     if (count ( $user ) > 0){
         return view ( 'search.search' )->withDetails ( $user )->withQuery ( $query );
     }else{
+       
+        return view ( 'search.search' )->withDetails ( $user )->withMessage ( 'No Details found. Try to search again !' );
         Session::flash('success', ' No Registered ' . $query .' on this platform');
-        return view ( 'search.search' )->withDetails ( $user )->withMessage ( 'No Details found. Try to search again !' );}
+    
+    }
 } )->name('search');
 
 
