@@ -105,6 +105,7 @@ return [
     */
 
     'key' => env('APP_KEY'),
+    'IPDATA_API_KEY' => env('IPDATA_API_KEY'),
 
     'cipher' => 'AES-256-CBC',
 
