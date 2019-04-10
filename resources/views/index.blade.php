@@ -11,7 +11,7 @@
             <div class="align-items-center justify-content-center">
                 <div class="row">
                     <div class="col col-lg-12 col-md-12 text-center">   
-                        <img src="{{asset('/img/dg.png')}}" height="250" width="300">             
+                        <img src="{{secure_asset('/img/ser.jpg')}}" height="250" width="300">             
                         <form action="{{route('search')}}" method="get">
                             {{ csrf_field() }}
                             <div class="row">
