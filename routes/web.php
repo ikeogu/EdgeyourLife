@@ -41,7 +41,7 @@ Route::get('activate/{token}', 'Auth\RegisterController@activate')
         }else{
             
             
-            Session::flash('success', 'There is no Registered service around your current area '.$res->city);
+            Session::flash('success', 'There is no Registered service around your current area ' . $res->city);
            
         }
     });
@@ -71,7 +71,7 @@ Route::any('/search', function () {
     if (count ( $user ) > 0){
         return view ( 'search.search' )->withDetails ( $user )->withQuery ( $query );
     }else{
-        Session::flash('success', ' No Registered' .$query .'on this platform');
+        Session::flash('success', ' No Registered ' . $query .' on this platform');
         return view ( 'search.search' )->withDetails ( $user )->withMessage ( 'No Details found. Try to search again !' );}
 } )->name('search');
 
