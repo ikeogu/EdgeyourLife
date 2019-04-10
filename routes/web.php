@@ -45,7 +45,7 @@ Route::get('activate/{token}', 'Auth\RegisterController@activate')
            
         }
     });
-Route::get('search/autocomplete', 'SearchController@autocomplete')->name('autocomplete');
+//Route::get('search/autocomplete', 'SearchController@autocomplete')->name('autocomplete');
 Route::resource('password','Auth\ForgotPasswordController');
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
@@ -72,7 +72,7 @@ Route::any('/search', function () {
         return view ( 'search.search' )->withDetails ( $user )->withQuery ( $query );
     }else{
        
-        return view ( 'search.search' )->withDetails ( $user )->withMessage ( 'No Details found. Try to search again !' );
+       
         Session::flash('success', ' No Registered ' . $query .' on this platform');
     
     }
