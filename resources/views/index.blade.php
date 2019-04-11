@@ -13,13 +13,14 @@
                     <div class="col col-lg-12 col-md-12 text-center">   
                         <img src="{{secure_asset('/img/ser.jpg')}}" height="250" width="300">             
                         <form action="{{route('search')}}" method="get" class="form-group">
-                        {{ csrf_field() }}   
+                        {{ csrf_field() }}  
+                            <input type="hidden" name="_token" > 
                             <div class="row">
                                 <div class="col-md-2 col-lg-2 col-sm-2"></div>
                                 <div class="col-md-9 col-lg-9 col-sm-9">
                                     <div class="form-group">
                                         <div class="input-group mb-5">
-                                            <input class="form-control form-rounded input'lg" placeholder=" Search for service" type="text" name="q" id ="q">
+                                            <input class="form-control form-rounded " placeholder=" Search for service" type="text" name="q" id ="q">
                                             <div class="input-group-append"> 
                                                 <span class="input-text">
                                                     <button type="submit" class="btn btn-success btn-md-2">

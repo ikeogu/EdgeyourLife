@@ -20,7 +20,7 @@ Route::get('/', function () {
         
         
         Session::flash('info', 'There is no Registered service around your current Location ' . $res->city);
-        
+        return view('index');
        
     }
 });
@@ -67,14 +67,14 @@ return view('userdashboard')->withMessage("Services in current  Location not fou
 
 Route::any('/search', function () {
     $query = Input::get ('q');
-    $user = Provider::where('service', 'like', '%{$query}%')->orWhere('name','like','%{$query}%' )->orWhere('id','like','%{$query}%')->where('address','like','%{$query}%' )->orWhere('city','like','%{$query}%' )->orWhere('phone','like','%{$query}%' )->orWhere('state','like','%{$query}%')->orWhere('minimum_price','like','%{$query}%' )->orWhere('description','like','%{$query}%' )->orWhere('certification','like','%{$query}%' )->get();
+    $user = Provider::where('service', 'like', '%'.$query.'%')->orWhere('name','like','%{$query}%' )->orWhere('id','like','%'.$query.'%')->where('address','like','%'.$query.'%' )->orWhere('city','like','%'.$query.'%' )->orWhere('phone','like','%'.$query.'%' )->orWhere('state','like','%'.$query.'%')->orWhere('minimum_price','like','%'.$query.'%' )->orWhere('description','like','%'.$query.'%' )->orWhere('certification','like','%'.$query.'%' )->get();
     
     if (count ($user) > 0){
         return view('search.search')->withDetails($user)->withQuery($query);
     }else{
        
         Session::flash('success', ' No Registered ' . $query .' on this platform');
-       
+        return view('search.search')->withDetails($user)->withQuery($query);
     
     }
 } )->name('search');

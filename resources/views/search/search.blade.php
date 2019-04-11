@@ -11,6 +11,7 @@
                         <img src="{{secure_asset('/img/ser.jpg')}}" height="250" width="300">             
                         <form action="{{route('search')}}" method="get">
                             {{ csrf_field() }}
+                            <input type="hidden" name="_token" > 
                             <div class="row">
                                 <div class="col-md-2 col-lg-2 col-sm-2"></div>
                                 <div class="col-md-9 col-lg-9 col-sm-9">
