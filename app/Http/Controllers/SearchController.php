@@ -18,9 +18,6 @@ class SearchController extends Controller
     public function index()
     {
       
-
-       
-
         return view('index',compact($nearby));
     }    
 

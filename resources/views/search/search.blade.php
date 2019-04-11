@@ -16,7 +16,7 @@
                                 <div class="col-md-9 col-lg-9 col-sm-9">
                                     <div class="form-group">
                                         <div class="input-group mb-5">
-                                            <input class="form-control form-rounded" placeholder=" Search for service" type="text" name="q">
+                                            <input class="form-control form-rounded" placeholder=" Search for service" type="text" name="q" id="q">
                                             <div class="input-group-append"> 
                                                 <span class="input-text">
                                                     <button type="submit" class="btn btn-success btn-md-2">
@@ -26,6 +26,7 @@
                                             </div>
                                         </div>   
                                     </div>
+                                    <div id="serviceList" class="form-group"></div>
                                 </div>
                             </div>    
                         </form>
@@ -64,6 +65,25 @@
           </div>
         </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#q').keyup(function(){
+           var query =  $(this).val();
+           if(query != ''){
+               var _token = $('input[name="_token"]').val();
+               $.ajax({
+                   url : "{{route('autocomplete.fetch')}}",
+                   method : "POST",
+                   data: {query:query,_token:_token},
+                   success:function(data){
+                       $('#serviceList').fadeIn();
+                       $('#serviceList').html(data);
+                   }
+               })
+           }
+        })
+    });
+</script>
 @endsection
 
    

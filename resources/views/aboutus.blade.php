@@ -10,8 +10,11 @@
 					<div class="col-lg-6">
 						<div class="story-content">
 							<h2>Brief Information <br>
-							About <span>Street Smart</span></h2>
-							<p class="mt-30">Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. <br> <br>
+							About <span>EYL,</span></h2>
+							<p class="mt-30">
+							EYL, is a social inclusion organisation with the sole aim to infuse E-Commerce into the micro SMEs via digital space. 
+								EYL concept emerged from logistic necessities caused by digital seclusion. Thus bespoke service, disruptive distorted solutions, & smart city initiative are the pillar objectives of EYL.  
+								We at EYL are thirsty for greener smarter systems, people and equipment. 
                            
 							</p>
 							

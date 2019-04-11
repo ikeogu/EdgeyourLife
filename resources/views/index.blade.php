@@ -12,14 +12,14 @@
                 <div class="row">
                     <div class="col col-lg-12 col-md-12 text-center">   
                         <img src="{{secure_asset('/img/ser.jpg')}}" height="250" width="300">             
-                        <form action="{{route('search')}}" method="get">
-                            {{ csrf_field() }}
+                        <form action="{{route('search')}}" method="get" class="form-group">
+                        {{ csrf_field() }}   
                             <div class="row">
                                 <div class="col-md-2 col-lg-2 col-sm-2"></div>
                                 <div class="col-md-9 col-lg-9 col-sm-9">
                                     <div class="form-group">
                                         <div class="input-group mb-5">
-                                            <input class="form-control form-rounded" placeholder=" Search for service" type="text" name="q" id ="q">
+                                            <input class="form-control form-rounded input'lg" placeholder=" Search for service" type="text" name="q" id ="q">
                                             <div class="input-group-append"> 
                                                 <span class="input-text">
                                                     <button type="submit" class="btn btn-success btn-md-2">
@@ -27,10 +27,12 @@
                                                     </button>
                                                 </span>
                                             </div>
+                                            <div id="serviceList" class="form-group"></div>
                                         </div>   
                                     </div>
                                 </div>
-                            </div>    
+                            </div> 
+                            
                         </form>
                     </div>
                     @if(Session::has('message'))
@@ -67,6 +69,25 @@
           </div>
         </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#q').keyup(function(){
+           var query =  $(this).val();
+           if(query != ''){
+               var _token = $('input[name="_token"]').val();
+               $.ajax({
+                   url : "{{route('autocomplete.fetch')}}",
+                   method : "POST",
+                   data: {query:query,_token:_token},
+                   success:function(data){
+                       $('#serviceList').fadeIn();
+                       $('#serviceList').html(data);
+                   }
+               })
+           }
+        })
+    });
+</script>
 @endsection
 
    

@@ -5,7 +5,25 @@ use Illuminate\Support\Facades\Input;
 use Kielabokkie\LaravelIpdata\Facades\Ipdata;
 
 
+Route::get('/', function () {
+    $res = Ipdata::lookup();
 
+    $curr = $res->city;
+    $curr2 =$res->region;
+            
+    $nearby = Provider::where('state',$curr2)->orwhere('city',$curr)->orwhere('city',$curr2)->orwhere('state',$curr)->get();
+    
+    if($nearby){
+    
+        return view('index',['nearby'=>$nearby]);
+    }else{
+        
+        
+        Session::flash('info', 'There is no Registered service around your current Location ' . $res->city);
+        
+       
+    }
+});
 
 Route::get('/aboutus', 'AboutusController@index')->name('aboutus');
 Auth::routes();
@@ -27,24 +45,7 @@ Route::get('activate/{token}', 'Auth\RegisterController@activate')
     Route::get('/myservicefeedbacks','feedBackController@myfeedback')->name('myfeedback');
     
     Route::get('/service_list', 'DashboardController@listServices')->name('listservices');
-    Route::get('/', function () {
-        $res = Ipdata::lookup();
-
-        $curr = $res->city;
-        $curr2 =$res->region;
-        
-        $nearby = Provider::where('state',$curr2)->orwhere('city',$curr)->orwhere('city',$curr2)->orwhere('state',$curr)->get();
-        
-        if($nearby){
-        
-            return view('index',['nearby'=>$nearby]);
-        }else{
-            
-            
-            Session::flash('success', 'There is no Registered service around your current area ' . $res->city);
-           
-        }
-    });
+    
 //Route::get('search/autocomplete', 'SearchController@autocomplete')->name('autocomplete');
 Route::resource('password','Auth\ForgotPasswordController');
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -66,17 +67,19 @@ return view('userdashboard')->withMessage("Services in current  Location not fou
 
 Route::any('/search', function () {
     $query = Input::get ('q');
-    $user = Provider::where('service', 'like', '%' . $query . "%")->orWhere('name','like','%'. $query .'%' )->orWhere('id','like','%'. $query.'%')->where('address','like','%'. $query .'%' )->orWhere('city','like','%'. $query.'%' )->orWhere('phone','like','%'. $query.'%' )->orWhere('state','like','%'. $query .'%' )->orWhere('minimum_price','like','%'. $query .'%' )->orWhere('description','like','%'. $query .'%' )->orWhere('certification','like','%'. $query .'%' )->get();
+    $user = Provider::where('service', 'like', '%{$query}%')->orWhere('name','like','%{$query}%' )->orWhere('id','like','%{$query}%')->where('address','like','%{$query}%' )->orWhere('city','like','%{$query}%' )->orWhere('phone','like','%{$query}%' )->orWhere('state','like','%{$query}%')->orWhere('minimum_price','like','%{$query}%' )->orWhere('description','like','%{$query}%' )->orWhere('certification','like','%{$query}%' )->get();
     
-    if (count ( $user ) > 0){
-        return view ( 'search.search' )->withDetails ( $user )->withQuery ( $query );
+    if (count ($user) > 0){
+        return view('search.search')->withDetails($user)->withQuery($query);
     }else{
        
-       
         Session::flash('success', ' No Registered ' . $query .' on this platform');
+       
     
     }
 } )->name('search');
 
+Route::get('/autocomplete','AutocompleteController@index');
+Route::post('/autocomplete/fetch','Autocomplete@fetch')->name('autocomplete.fetch');
 
 

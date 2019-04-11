@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="shortcut icon" href="{{secure_asset('img/favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{secure_asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{asset('img/favicon.ico') }}" type="image/x-icon">
 
     <!-- CSRF Token -->
     <meta name="_token" content="{{ csrf_token() }}">
@@ -35,23 +35,13 @@
 
     <!-- Styles -->
     
-    <link rel="stylesheet" href="{{secure_asset('css/argon.css')}}">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link rel="stylesheet" href="{{asset('css/argon.css')}}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    
-		<script src="{{secure_asset('js/argon.js')}}"></script>
-    <script src="{{secure_asset('js/app.js')}}"></script>
-    <script type="text/javascript">
-      $(function(){
-      $( "#q" ).autocomplete({
-        source: "search/autocomplete",
-        minLength: 3,
-        select: function(event, ui) {
-          $('#q').val(ui.item.value);
-        }
-      });
-    });
-  </script>
-
+		<script src="{{asset('js/argon.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
+    
 </head>
 <body>
     
@@ -59,7 +49,7 @@
     <nav id="navbar-main" class="navbar navbar-expand-lg navbar-dark bg-success ">
       <div class="container">
         <a class="navbar-brand mr-lg-5" href="/">
-          <img src="{{secure_asset('img/last.png')}}" style="height:100px; width:130px;">EdgeYourLife
+          <img src="{{asset('img/last.png')}}" style="height:100px; width:130px;">EdgeYourLife
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -69,7 +59,7 @@
             <div class="row">
               <div class="col-6 collapse-brand">
                 <a href="/">
-                  <img src="{{secure_asset('img/last.png')}}" style="height:100px; width:130px;">
+                  <img src="{{asset('img/last.png')}}" style="height:100px; width:130px;">
                 </a>
               </div>
               <div class="col-6 collapse-close">
