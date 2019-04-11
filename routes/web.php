@@ -1,6 +1,7 @@
 <?php
 
 use App\Provider;
+
 use Illuminate\Support\Facades\Input;
 use Kielabokkie\LaravelIpdata\Facades\Ipdata;
 
@@ -67,7 +68,9 @@ return view('userdashboard')->withMessage("Services in current  Location not fou
 
 Route::any('/search', function () {
     $query = Input::get ('q');
-    $user = Provider::where('service', 'like', '%'.$query.'%')->orWhere('name','like','%{$query}%' )->orWhere('id','like','%'.$query.'%')->where('address','like','%'.$query.'%' )->orWhere('city','like','%'.$query.'%' )->orWhere('phone','like','%'.$query.'%' )->orWhere('state','like','%'.$query.'%')->orWhere('minimum_price','like','%'.$query.'%' )->orWhere('description','like','%'.$query.'%' )->orWhere('certification','like','%'.$query.'%' )->get();
+    $user = Provider::whereHas('user', function($term) use($query) {
+        $term->where('name', 'like', '%'.$query.'%');
+    })->orwhere('name', 'like', '%'.$query.'%')->orwhere('address','like','%'.$query.'%' )->orWhere('city','like','%'.$query.'%' )->orWhere('phone','like','%'.$query.'%' )->orWhere('state','like','%'.$query.'%')->orWhere('minimum_price','like','%'.$query.'%' )->orWhere('description','like','%'.$query.'%' )->orWhere('certification','like','%'.$query.'%' )->get();
     
     if (count ($user) > 0){
         return view('search.search')->withDetails($user)->withQuery($query);

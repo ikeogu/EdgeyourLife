@@ -47,7 +47,7 @@ class User extends Authenticatable
     
     public function providers()
     {
-      return $this->hasMany('App\Provider');
+      return $this->hasMany('App\Provider','user_id');
     }
 
     public function userfeedback()
