@@ -24,7 +24,7 @@ class UserTableSeeder extends Seeder
        $admin->username = ' Lucky Dera';
        $admin->password = bcrypt('password');
        $admin->save();
-       $admin->roles()->attach($role_admin);
+       $admin->role_id = 1;
 
        $admin = new User();
        $admin->name = 'Eddy ';
@@ -34,17 +34,9 @@ class UserTableSeeder extends Seeder
        $admin->username = ' Eddy';
        $admin->password = bcrypt('password');
        $admin->save();
-       $admin->roles()->attach($role_admin);
+       $admin->role_id = 1;
 
-       $provider = new User();
-       $provider->name = 'Daniel IKeogu ';
-       $provider->email = 'iDanny@gmail.com';
-       $provider->phone = '08133627345';
       
-       $provider->address = ' ngwamwgizor';
-       $provider->password = bcrypt('password');
-       $provider->save();
-       $provider->roles()->attach($role_provider);
 
     }
 }
