@@ -21,8 +21,17 @@ class UserTableSeeder extends Seeder
        $admin->email = 'ikeogu322@gmail.com';
        $admin->phone = '08133627611';
        
-      
-       $admin->address = ' Back of Gensis Choba';
+       $admin->username = ' Lucky Dera';
+       $admin->password = bcrypt('password');
+       $admin->save();
+       $admin->roles()->attach($role_admin);
+
+       $admin = new User();
+       $admin->name = 'Eddy ';
+       $admin->email = 'ed.eddie@gmail.com';
+       $admin->phone = '08050957347';
+       
+       $admin->username = ' Eddy';
        $admin->password = bcrypt('password');
        $admin->save();
        $admin->roles()->attach($role_admin);
@@ -37,14 +46,5 @@ class UserTableSeeder extends Seeder
        $provider->save();
        $provider->roles()->attach($role_provider);
 
-       $guest = new User();
-       $guest->name = 'Ola baby';
-       $guest->email = 'oly@gmail.com';
-       $guest->phone = '08133627219';
-       $guest->city ='3';
-      
-       $guest->password = bcrypt('password');
-       $guest->save();
-       $guest->roles()->attach($role_user);
     }
 }
