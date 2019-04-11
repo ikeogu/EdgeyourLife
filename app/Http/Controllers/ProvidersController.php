@@ -90,7 +90,7 @@ class ProvidersController extends Controller
         }
         $provider = new Provider();
         $provider->logo = $fileNameToStore;
-        $provider->name = $request->Input('name');
+        $provider->p_name = $request->Input('name');
         $provider->address = $request->Input('address');
         $provider->email = $request->Input('email');
         $provider->phone= $request->Input('phone');
