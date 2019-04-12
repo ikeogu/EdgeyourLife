@@ -70,7 +70,7 @@ Route::any('/search', function () {
     $query = Input::get ('q');
     $user = Provider::whereHas('user', function($term) use($query) {
         $term->where('name', 'ilike', '%'.$query.'%');
-    })->orwhere('p_name', 'ilike', '%'.$query.'%')->orwhere('address','ilike','%'.$query.'%' )->orWhere('city','ilike','%'.$query.'%' )->orWhere('phone','ilike','%'.$query.'%' )->orWhere('state','ilike','%'.$query.'%')->orWhere('minimum_price','ilike','%'.$query.'%' )->orWhere('description','ilike','%'.$query.'%' )->orWhere('certification','ilike','%'.$query.'%' )->get();
+    })->orwhere('p_name', 'ilike', '%'.$query.'%')->orwhere('address','ilike','%'.$query.'%' )->orwhere('service','ilike','%'.$query.'%' )->orWhere('city','ilike','%'.$query.'%' )->orWhere('phone','ilike','%'.$query.'%' )->orWhere('state','ilike','%'.$query.'%')->orWhere('minimum_price','ilike','%'.$query.'%' )->orWhere('description','ilike','%'.$query.'%' )->orWhere('certification','ilike','%'.$query.'%' )->get();
     
     if (count ($user) > 0){
         return view('search.search')->withDetails($user)->withQuery($query);
