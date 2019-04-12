@@ -16,10 +16,10 @@
                                 </div>
                                 <div class="desc">
                                     <div>          
-                                        <h4> Name</h4>   <h4>{{ $provider->name}}</h4>
+                                        <h4> Name : {{ $provider->p_name}}</h4>   
                                     </div>
                                     <div class='text'>
-                                        <h4>Service </h4><h4>{{ $provider->service}}</h4>
+                                        <h4>Service: {{ $provider->service}}</h4>
                                     </div>
                                 </div>
                                 <div class="row">
