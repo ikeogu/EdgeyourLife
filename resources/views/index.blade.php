@@ -74,7 +74,7 @@
                     <div class="row">
                             <div class="col-6 justify-content-center card-body ">
                                 <strong class="text-success text-uppercase">You have No Service Around your Current Location</strong><br/>
-                                <strong class="text-success ">You can use the Search bar to search</strong>
+                                <strong class="text-danger ">You can use the Search bar to search</strong>
                             </div>
                         </div>
                     @endif

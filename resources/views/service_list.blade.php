@@ -11,15 +11,15 @@
                         <div class="col-lg-4 col-sm-6 d-flex align-items-stretch">
                             <div class="single-feature">
                                 <div class="icon">
-                                    <span class=""> <img src=" storage/logo/{{$provider->logo}}" width="350" height="300"           class="img-responsive">
+                                    <span class=""> <img src=" storage/logo/{{$provider->logo}}" width="350" height="300"           class="img-responsive img-rounded">
                                     </span>
                                 </div>
                                 <div class="desc">
                                     <div>          
-                                        <h4> Service Provider's Name</h4>   <h4>{{ $provider->name}}</h4>
+                                        <h4> Name</h4>   <h4>{{ $provider->name}}</h4>
                                     </div>
                                     <div class='text'>
-                                        <h4>Service Offered</h4><h4>{{ $provider->service}}</h4>
+                                        <h4>Service </h4><h4>{{ $provider->service}}</h4>
                                     </div>
                                 </div>
                                 <div class="row">

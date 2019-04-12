@@ -25,20 +25,15 @@
                                 {{ App\User::find(auth()->user()->id)->providers()->count()}}
                                  </p>
 
-                                
-                            </h3>
+                                </h3>
                             </div>
                         </div>
                     </div>
                 </div> 
             </div>
-                        
-                                <div class="card-footer ">
-                                                                        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endsection
+        </div>                
+        <div class="card-footer ">
+                                                
+        </div>
+</div>
+ @endsection
