@@ -29,7 +29,7 @@
                             <div class="card-header">
                                  <h3 class="mb-30">Please Tell us More about your service</h3>
                             </div>
-                            <form  method="POST" action="{{ route('providers.store') }}" enctype="multipart/form-data">
+                            <form  method="POST" action="{{route('providers.store')}}" enctype="multipart/form-data">
                             @csrf
                                 <div class="mt-10">
                                     <input id="p_name" type="text"  placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Name'"  class="form-control{{ $errors->has('p_name') ? ' is-invalid' : '' }}" name="p_name" value="{{ old('p_name') }}" required autofocus>
