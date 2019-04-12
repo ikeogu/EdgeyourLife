@@ -6,8 +6,8 @@
 
 <div class="position-relative">
      
-        <div class="container shape-container d-flex align-items-center py-lg">
-          <div class="col px-0">
+    <div class="container shape-container d-flex align-items-center py-lg">
+        <div class="col px-0">
             <div class="align-items-center justify-content-center">
                 <div class="row">
                     <div class="col col-lg-12 col-md-12 text-center">   
@@ -43,32 +43,45 @@
                 </div>
 
                 <div class="row row-grid">
-                    @foreach($nearby as $provider)
-                    <div class="col col-lg-4">
-                        <div class="card card-lift--hover shadow border-0">
-                            <div class="card-body ">
-                                <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
-                                
-                                    <img src='/storage/logo/{{$provider->logo}}' class='img-fluid img-responsive '> 
-                                                    
-                                </div>
-                                <h6 class="text-success text-uppercase">{{$provider->name}}</h6>
-                                
-                                <div>
-                                    <span class="badge badge-pill ">{{$provider->city}}</span>
-                                    <span class="badge badge-pill ">{{str_limit($provider->service, $limit = 20, $end = '...')}}</span>
-                                    <span class="badge badge-pill ">₦ {{$provider->minimum_price}}</span>
-                                </div>
-                                <a href="/providers/{{$provider->id}}" class="btn btn-success mt-4">View</a>
+                    @if(!$nearby)
+                        <div class="row">
+                            <div class="col-6 success">
+                                Services Around your Current Location
                             </div>
                         </div>
-                    </div>
-                    @endforeach
+                        @foreach($nearby as $provider)
+                        <div class="col col-lg-4">
+                            <div class="card card-lift--hover shadow border-0">
+                                <div class="card-body ">
+                                    <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
+                                    
+                                        <img src='/storage/logo/{{$provider->logo}}' class='img-fluid img-responsive '> 
+                                                        
+                                    </div>
+                                    <h6 class="text-success text-uppercase">{{$provider->name}}</h6>
+                                    
+                                    <div>
+                                        <span class="badge badge-pill ">{{$provider->city}}</span>
+                                        <span class="badge badge-pill ">{{str_limit($provider->service, $limit = 20, $end = '...')}}</span>
+                                        <span class="badge badge-pill ">₦ {{$provider->minimum_price}}</span>
+                                    </div>
+                                    <a href="/providers/{{$provider->id}}" class="btn btn-success mt-4">View</a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    @else
+                    <div class="row">
+                            <div class="col-6 success">
+                                You have No Service Around your Current Location
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
-            </div>
-          </div>
+            
         </div>
+    </div>
 </div>
 <script>
     $(document).ready(function(){
