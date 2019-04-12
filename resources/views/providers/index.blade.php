@@ -16,7 +16,7 @@
                         </div>
                         <div class="col-md-9 mt-sm-20">
                                     
-                                <h4> {{ $provider->name}}</h4>   
+                                <h4> {{ $provider->p_name}}</h4>   
                               
                                 <p> {{ $provider->service}}</p>
                                 <a href="/providers/{{ $provider->id }}">more </a>

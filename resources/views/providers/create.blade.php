@@ -32,10 +32,10 @@
                             <form  method="POST" action="{{ route('providers.store') }}" enctype="multipart/form-data">
                             @csrf
                                 <div class="mt-10">
-                                    <input id="name" type="text"  placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Name'"  class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                    <input id="p_name" type="text"  placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Name'"  class="form-control{{ $errors->has('p_name') ? ' is-invalid' : '' }}" name="p_name" value="{{ old('p_name') }}" required autofocus>
                                          @if ($errors->has('name'))
                                             <span class="invalid-feedback" role="alert">
-                                               <strong>{{ $errors->first('name') }}</strong>
+                                               <strong>{{ $errors->first('p_name') }}</strong>
                                             </span>
                                         @endif
                                 </div>

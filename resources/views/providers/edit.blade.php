@@ -38,11 +38,11 @@
         </div>
 	    <div class="mt-10">
            
-            <input id="name" type="text"    class="form-control" name="name" value="{{ $provider->name}}" required autofocus>
+            <input id="p_name" type="text"    class="form-control" name="p_name" value="{{ $provider->p_name}}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('p_name'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('p_name') }}</strong>
                                     </span>
                                 @endif
         </div>

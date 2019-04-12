@@ -16,7 +16,7 @@
               </div>
               <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                 <div class="card-profile-actions py-4 mt-lg-0">
-                  <a href="#" class="btn btn-sm btn-info mr-4">{{ $provider->name }}</a>
+                  <a href="#" class="btn btn-sm btn-info mr-4">{{ $provider->p_name }}</a>
                   <a href="#" class="btn btn-sm btn-default float-right">{{ $provider->phone}}</a>
                 </div>
               </div>
