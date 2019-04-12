@@ -57,7 +57,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 Route::post('/dashboard',function(){
     $q = Input::get ( 'q' );
 if ($q!=""){
-    $providers = Provider::where('address','like','%'. $q .'%' )->orWhere('city','like','%'. $q .'%' )->orWhere('state','like','%'. $q .'%' )->orWhere('id','like','%'. $q .'%')->orWhere('name','like','%'. $q .'%')->get();
+    $providers = Provider::where('address','ilike','%'. $q .'%' )->orWhere('city','ilike','%'. $q .'%' )->orWhere('state','ilike','%'. $q .'%' )->orWhere('id','ilike','%'. $q .'%')->orWhere('name','ilike','%'. $q .'%')->get();
     return view('userdashboard')->withDetails($providers)->withQuery($q);
 }else{
 return view('userdashboard')->withMessage("Services in current  Location not found.");
@@ -69,8 +69,8 @@ return view('userdashboard')->withMessage("Services in current  Location not fou
 Route::any('/search', function () {
     $query = Input::get ('q');
     $user = Provider::whereHas('user', function($term) use($query) {
-        $term->where('name', 'like', '%'.$query.'%');
-    })->orwhere('p_name', 'like', '%'.$query.'%')->orwhere('address','like','%'.$query.'%' )->orWhere('city','like','%'.$query.'%' )->orWhere('phone','like','%'.$query.'%' )->orWhere('state','like','%'.$query.'%')->orWhere('minimum_price','like','%'.$query.'%' )->orWhere('description','like','%'.$query.'%' )->orWhere('certification','like','%'.$query.'%' )->get();
+        $term->where('name', 'ilike', '%'.$query.'%');
+    })->orwhere('p_name', 'ilike', '%'.$query.'%')->orwhere('address','ilike','%'.$query.'%' )->orWhere('city','ilike','%'.$query.'%' )->orWhere('phone','ilike','%'.$query.'%' )->orWhere('state','ilike','%'.$query.'%')->orWhere('minimum_price','ilike','%'.$query.'%' )->orWhere('description','ilike','%'.$query.'%' )->orWhere('certification','ilike','%'.$query.'%' )->get();
     
     if (count ($user) > 0){
         return view('search.search')->withDetails($user)->withQuery($query);
