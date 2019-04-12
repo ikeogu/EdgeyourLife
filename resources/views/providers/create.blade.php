@@ -33,7 +33,7 @@
                             @csrf
                                 <div class="mt-10">
                                     <input id="p_name" type="text"  placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Name'"  class="form-control{{ $errors->has('p_name') ? ' is-invalid' : '' }}" name="p_name" value="{{ old('p_name') }}" required autofocus>
-                                         @if ($errors->has('name'))
+                                         @if ($errors->has('p_name'))
                                             <span class="invalid-feedback" role="alert">
                                                <strong>{{ $errors->first('p_name') }}</strong>
                                             </span>

@@ -11,8 +11,8 @@ Route::get('/', function () {
 
     $curr = $res->city;
     $curr2 =$res->region;
-     dd( $curr);       
-    $nearby = Provider::where('state',$curr2)->orwhere('city',$curr)->orwhere('city',$curr2)->orwhere('state',$curr)->get();
+           
+    $nearby = Provider::where('state',$curr2)->orwhere('city',$curr)->get();
     
     if($nearby){
     
